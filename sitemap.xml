@@ -9,11 +9,19 @@
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
+         <loc>https://docs.axium.tools/concepts/completions/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
          <loc>https://docs.axium.tools/concepts/config/</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
          <loc>https://docs.axium.tools/concepts/environments/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.axium.tools/concepts/gears/</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
@@ -34,6 +42,10 @@
     </url>
     <url>
          <loc>https://docs.axium.tools/concepts/tmux-integration/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.axium.tools/concepts/wrappers/</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>
@@ -62,6 +74,10 @@
     </url>
     <url>
          <loc>https://docs.axium.tools/development/ai-context/README-GPT/</loc>
+         <lastmod>2025-10-13</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.axium.tools/guides/writing-gears/</loc>
          <lastmod>2025-10-13</lastmod>
     </url>
     <url>

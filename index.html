@@ -666,6 +666,75 @@
   
   
     <li class="md-nav__item">
+      <a href="concepts/gears/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Gears
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/completions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Shell Completions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="concepts/wrappers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Command Wrappers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="concepts/registry/" class="md-nav__link">
         
   
@@ -770,6 +839,29 @@
   
   <span class="md-ellipsis">
     Writing Spokes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="guides/writing-gears/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Writing Gears
     
   </span>
   
@@ -1378,11 +1470,11 @@ It provides a lightweight daemon, intuitive CLI, dynamic HUD, and extensible plu
 <tbody>
 <tr>
 <td>Daemon (axiumd)</td>
-<td>Async background process maintaining session state, env context, and Spokes registry</td>
+<td>Async background process maintaining session state, env context, and plugin registry</td>
 </tr>
 <tr>
 <td>CLI (axium)</td>
-<td>Typer-based command interface with structured sub-commands</td>
+<td>Typer-based command interface with structured sub-commands and fast completions</td>
 </tr>
 <tr>
 <td>HUD</td>
@@ -1390,11 +1482,15 @@ It provides a lightweight daemon, intuitive CLI, dynamic HUD, and extensible plu
 </tr>
 <tr>
 <td>Palette</td>
-<td>Curses-based quick launcher; triggers common commands or Spoke actions interactively</td>
+<td>Curses-based quick launcher; triggers common commands or plugin actions interactively</td>
 </tr>
 <tr>
 <td>Spokes</td>
-<td>Modular plugin system extending Axium without touching the core</td>
+<td>Lightweight plugin system for commands and event handlers</td>
+</tr>
+<tr>
+<td>Gears</td>
+<td>Privileged automation extensions with tmux integration and enhanced permissions</td>
 </tr>
 </tbody>
 </table>
@@ -1436,7 +1532,8 @@ It provides a lightweight daemon, intuitive CLI, dynamic HUD, and extensible plu
 <ul>
 <li><a href="getting-started/">Getting Started</a> - Installation and quickstart</li>
 <li><a href="concepts/environments/">Core Concepts</a> - Understanding Axium's architecture</li>
-<li><a href="guides/writing-spokes/">Writing Spokes</a> - Extending Axium with plugins</li>
+<li><a href="guides/writing-spokes/">Writing Spokes</a> - Lightweight plugin development</li>
+<li><a href="guides/writing-gears/">Writing Gears</a> - Privileged automation extensions</li>
 <li><a href="development/CONTRIBUTING/">Contributing</a> - Join the development</li>
 <li><a href="development/ROADMAP/">Roadmap</a> - Upcoming features</li>
 </ul>
