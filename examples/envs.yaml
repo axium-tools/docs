@@ -1,0 +1,57 @@
+# Axium Environment Configuration
+#
+# This file defines all available environments and their properties.
+# Any property can be referenced in templates using ${env.<key>} syntax.
+#
+# Copy this file to: ~/.config/axium/envs.yaml
+
+envs:
+  # Root/production environment
+  root:
+    prefix: enva-root
+    aws_profile: root
+    color: teal
+    region: eu-west-1
+    description: Production environment
+
+  # Builder/CI environment
+  builder:
+    prefix: enva-builder
+    aws_profile: builder
+    color: cyan
+    region: eu-west-2
+    description: Build and deployment environment
+
+  # Development environment
+  dev:
+    prefix: enva-dev
+    aws_profile: dev-account
+    color: yellow
+    region: us-east-1
+    description: Development environment
+
+# Usage:
+#
+# 1. Copy this file to ~/.config/axium/envs.yaml
+#
+# 2. Customize the environments and properties for your setup
+#
+# 3. Set the active environment:
+#    $ axium env set root
+#
+# 4. View available environments:
+#    $ axium env list
+#
+# 5. Show properties for an environment:
+#    $ axium env show root
+#
+# 6. Reference properties in prefixes.yaml:
+#    prefix: ${env.prefix}
+#    # Expands to: enva-root (when root is active)
+#
+# Properties are completely flexible - add any keys your workflow needs:
+#   - k8s_context: production-cluster
+#   - domain: example.com
+#   - ssh_key: ~/.ssh/prod_rsa
+#   - prompt_suffix: [PROD]
+#   - etc.
