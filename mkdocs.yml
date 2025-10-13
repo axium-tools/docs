@@ -4,7 +4,7 @@ site_description: Structure for your terminal
 site_author: Axium Team
 repo_url: https://github.com/axium-tools/axium
 repo_name: axium-tools/axium
-edit_uri: ""
+edit_uri: edit/main/docs/docs/
 
 theme:
   name: material
