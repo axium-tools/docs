@@ -523,18 +523,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-start-the-daemon" class="md-nav__link">
+  <a href="#1-set-an-environment-daemon-auto-starts" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Start the Daemon
+      1. Set an Environment (Daemon Auto-Starts)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-set-an-environment" class="md-nav__link">
+  <a href="#2-verify-daemon-is-running" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Set an Environment
+      2. Verify Daemon is Running
     </span>
   </a>
   
@@ -550,9 +550,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-launch-the-palette" class="md-nav__link">
+  <a href="#4-test-shell-completions" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Launch the Palette
+      4. Test Shell Completions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-launch-the-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Launch the Palette
     </span>
   </a>
   
@@ -1523,18 +1532,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-start-the-daemon" class="md-nav__link">
+  <a href="#1-set-an-environment-daemon-auto-starts" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Start the Daemon
+      1. Set an Environment (Daemon Auto-Starts)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-set-an-environment" class="md-nav__link">
+  <a href="#2-verify-daemon-is-running" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Set an Environment
+      2. Verify Daemon is Running
     </span>
   </a>
   
@@ -1550,9 +1559,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-launch-the-palette" class="md-nav__link">
+  <a href="#4-test-shell-completions" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Launch the Palette
+      4. Test Shell Completions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-launch-the-palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Launch the Palette
     </span>
   </a>
   
@@ -1678,22 +1696,30 @@
 </code></pre></div>
 <hr />
 <h2 id="first-steps">First Steps<a class="headerlink" href="#first-steps" title="Permanent link">&para;</a></h2>
-<h3 id="1-start-the-daemon">1. Start the Daemon<a class="headerlink" href="#1-start-the-daemon" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>axium<span class="w"> </span>daemon<span class="w"> </span>start
+<h3 id="1-set-an-environment-daemon-auto-starts">1. Set an Environment (Daemon Auto-Starts)<a class="headerlink" href="#1-set-an-environment-daemon-auto-starts" title="Permanent link">&para;</a></h3>
+<p>The daemon automatically starts when you run any <code>axium</code> command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>axium<span class="w"> </span>env<span class="w"> </span><span class="nb">set</span><span class="w"> </span>prod
 </code></pre></div>
-<p>The daemon runs in the background and maintains your session state.</p>
-<h3 id="2-set-an-environment">2. Set an Environment<a class="headerlink" href="#2-set-an-environment" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>axium<span class="w"> </span>env<span class="w"> </span><span class="nb">set</span><span class="w"> </span>prod
+<p>The daemon runs in the background and maintains your session state, handling IPC operations, events, and completion cache updates.</p>
+<p><strong>Note</strong>: You don't need to manually start the daemon - it starts automatically when needed.</p>
+<h3 id="2-verify-daemon-is-running">2. Verify Daemon is Running<a class="headerlink" href="#2-verify-daemon-is-running" title="Permanent link">&para;</a></h3>
+<p>Check daemon status:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>axium<span class="w"> </span>daemon<span class="w"> </span>status
 </code></pre></div>
-<p>Axium uses environments to manage different contexts (dev, staging, prod, etc.).</p>
 <h3 id="3-view-the-hud">3. View the HUD<a class="headerlink" href="#3-view-the-hud" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>axium<span class="w"> </span>hud
 </code></pre></div>
 <p>Output:
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[axium] env:prod aws:- uptime:5m
 </code></pre></div></p>
-<h3 id="4-launch-the-palette">4. Launch the Palette<a class="headerlink" href="#4-launch-the-palette" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>axium<span class="w"> </span>palette
+<h3 id="4-test-shell-completions">4. Test Shell Completions<a class="headerlink" href="#4-test-shell-completions" title="Permanent link">&para;</a></h3>
+<p>Axium provides fast shell completions that auto-update:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>axium<span class="w"> </span>env<span class="w"> </span>&lt;TAB&gt;<span class="w">      </span><span class="c1"># Shows: get  list  set  show</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>axium<span class="w"> </span>daemon<span class="w"> </span>&lt;TAB&gt;<span class="w">   </span><span class="c1"># Shows: logs  reload  start  status  stop</span>
+</code></pre></div>
+<p>See <a href="../concepts/completions/">Shell Completions</a> for installation.</p>
+<h3 id="5-launch-the-palette">5. Launch the Palette<a class="headerlink" href="#5-launch-the-palette" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>axium<span class="w"> </span>palette
 </code></pre></div>
 <p>The interactive palette provides quick access to common commands and Spoke actions.</p>
 <hr />
@@ -1716,18 +1742,18 @@
 <hr />
 <h2 id="example-workflows">Example Workflows<a class="headerlink" href="#example-workflows" title="Permanent link">&para;</a></h2>
 <h3 id="switch-environment">Switch Environment<a class="headerlink" href="#switch-environment" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>axium<span class="w"> </span>env<span class="w"> </span><span class="nb">set</span><span class="w"> </span>builder
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>axium<span class="w"> </span>hud
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>axium<span class="w"> </span>env<span class="w"> </span><span class="nb">set</span><span class="w"> </span>builder
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>axium<span class="w"> </span>hud
 </code></pre></div>
 <p>Output:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>[axium] env:builder aws:- uptime:5m
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>[axium] env:builder aws:- uptime:5m
 </code></pre></div></p>
 <h3 id="reload-daemon">Reload Daemon<a class="headerlink" href="#reload-daemon" title="Permanent link">&para;</a></h3>
 <p>Reload daemon configuration without restart:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>axium<span class="w"> </span>daemon<span class="w"> </span>reload
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>axium<span class="w"> </span>daemon<span class="w"> </span>reload
 </code></pre></div>
 <h3 id="view-logs">View Logs<a class="headerlink" href="#view-logs" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>axium<span class="w"> </span>daemon<span class="w"> </span>logs<span class="w"> </span>-f
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>axium<span class="w"> </span>daemon<span class="w"> </span>logs<span class="w"> </span>-f
 </code></pre></div>
 <hr />
 <h2 id="development-setup">Development Setup<a class="headerlink" href="#development-setup" title="Permanent link">&para;</a></h2>
@@ -1739,10 +1765,10 @@
 <li>pytest</li>
 </ul>
 <p>Setup:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axium-tools/axium.git
-<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">cd</span><span class="w"> </span>axium
-<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>pytest<span class="w"> </span>-q
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axium-tools/axium.git
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">cd</span><span class="w"> </span>axium
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>pip<span class="w"> </span>install<span class="w"> </span>-e<span class="w"> </span>.<span class="o">[</span>dev<span class="o">]</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>pytest<span class="w"> </span>-q
 </code></pre></div>
 <hr />
 <h2 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h2>

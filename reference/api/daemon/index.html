@@ -1100,6 +1100,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#axium.core.daemon.ensure_daemon_running" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;ensure_daemon_running
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1567,6 +1576,15 @@
   <a href="#axium.core.daemon.status" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axium.core.daemon.ensure_daemon_running" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;ensure_daemon_running
     </span>
   </a>
   
@@ -6511,6 +6529,176 @@ Use send_request_sync({"cmd": "ping"}) to verify daemon is responsive.</p>
 <a id="__codelineno-0-1867" name="__codelineno-0-1867"></a>        <span class="s2">&quot;socket&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">SOCKET_PATH</span><span class="p">),</span>
 <a id="__codelineno-0-1868" name="__codelineno-0-1868"></a>        <span class="s2">&quot;socket_exists&quot;</span><span class="p">:</span> <span class="n">SOCKET_PATH</span><span class="o">.</span><span class="n">exists</span><span class="p">(),</span>
 <a id="__codelineno-0-1869" name="__codelineno-0-1869"></a>    <span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="axium.core.daemon.ensure_daemon_running" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">ensure_daemon_running</span><span class="p">()</span></code>
+
+<a href="#axium.core.daemon.ensure_daemon_running" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Ensure daemon is running, starting it automatically if needed.</p>
+<p>Checks if daemon is responsive via ping. If not responsive or not running,
+starts the daemon automatically in the background.</p>
+<p>This is called by the CLI on every command invocation to ensure the daemon
+is always available for IPC operations, event handling, and completion cache
+management.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="bool">bool</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>True if daemon is running (or successfully started), False on error</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ensure_daemon_running</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kc">True</span>  <span class="c1"># Daemon is now guaranteed to be running</span>
+</code></pre></div>
+</details>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>Uses a 1-second timeout for ping check to avoid blocking CLI startup.
+If daemon start fails, logs warning but returns False (non-fatal).</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>axium/core/daemon.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1872">1872</a></span>
+<span class="normal"><a href="#__codelineno-0-1873">1873</a></span>
+<span class="normal"><a href="#__codelineno-0-1874">1874</a></span>
+<span class="normal"><a href="#__codelineno-0-1875">1875</a></span>
+<span class="normal"><a href="#__codelineno-0-1876">1876</a></span>
+<span class="normal"><a href="#__codelineno-0-1877">1877</a></span>
+<span class="normal"><a href="#__codelineno-0-1878">1878</a></span>
+<span class="normal"><a href="#__codelineno-0-1879">1879</a></span>
+<span class="normal"><a href="#__codelineno-0-1880">1880</a></span>
+<span class="normal"><a href="#__codelineno-0-1881">1881</a></span>
+<span class="normal"><a href="#__codelineno-0-1882">1882</a></span>
+<span class="normal"><a href="#__codelineno-0-1883">1883</a></span>
+<span class="normal"><a href="#__codelineno-0-1884">1884</a></span>
+<span class="normal"><a href="#__codelineno-0-1885">1885</a></span>
+<span class="normal"><a href="#__codelineno-0-1886">1886</a></span>
+<span class="normal"><a href="#__codelineno-0-1887">1887</a></span>
+<span class="normal"><a href="#__codelineno-0-1888">1888</a></span>
+<span class="normal"><a href="#__codelineno-0-1889">1889</a></span>
+<span class="normal"><a href="#__codelineno-0-1890">1890</a></span>
+<span class="normal"><a href="#__codelineno-0-1891">1891</a></span>
+<span class="normal"><a href="#__codelineno-0-1892">1892</a></span>
+<span class="normal"><a href="#__codelineno-0-1893">1893</a></span>
+<span class="normal"><a href="#__codelineno-0-1894">1894</a></span>
+<span class="normal"><a href="#__codelineno-0-1895">1895</a></span>
+<span class="normal"><a href="#__codelineno-0-1896">1896</a></span>
+<span class="normal"><a href="#__codelineno-0-1897">1897</a></span>
+<span class="normal"><a href="#__codelineno-0-1898">1898</a></span>
+<span class="normal"><a href="#__codelineno-0-1899">1899</a></span>
+<span class="normal"><a href="#__codelineno-0-1900">1900</a></span>
+<span class="normal"><a href="#__codelineno-0-1901">1901</a></span>
+<span class="normal"><a href="#__codelineno-0-1902">1902</a></span>
+<span class="normal"><a href="#__codelineno-0-1903">1903</a></span>
+<span class="normal"><a href="#__codelineno-0-1904">1904</a></span>
+<span class="normal"><a href="#__codelineno-0-1905">1905</a></span>
+<span class="normal"><a href="#__codelineno-0-1906">1906</a></span>
+<span class="normal"><a href="#__codelineno-0-1907">1907</a></span>
+<span class="normal"><a href="#__codelineno-0-1908">1908</a></span>
+<span class="normal"><a href="#__codelineno-0-1909">1909</a></span>
+<span class="normal"><a href="#__codelineno-0-1910">1910</a></span>
+<span class="normal"><a href="#__codelineno-0-1911">1911</a></span>
+<span class="normal"><a href="#__codelineno-0-1912">1912</a></span>
+<span class="normal"><a href="#__codelineno-0-1913">1913</a></span>
+<span class="normal"><a href="#__codelineno-0-1914">1914</a></span>
+<span class="normal"><a href="#__codelineno-0-1915">1915</a></span>
+<span class="normal"><a href="#__codelineno-0-1916">1916</a></span>
+<span class="normal"><a href="#__codelineno-0-1917">1917</a></span>
+<span class="normal"><a href="#__codelineno-0-1918">1918</a></span>
+<span class="normal"><a href="#__codelineno-0-1919">1919</a></span>
+<span class="normal"><a href="#__codelineno-0-1920">1920</a></span>
+<span class="normal"><a href="#__codelineno-0-1921">1921</a></span>
+<span class="normal"><a href="#__codelineno-0-1922">1922</a></span>
+<span class="normal"><a href="#__codelineno-0-1923">1923</a></span>
+<span class="normal"><a href="#__codelineno-0-1924">1924</a></span>
+<span class="normal"><a href="#__codelineno-0-1925">1925</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1872" name="__codelineno-0-1872"></a><span class="k">def</span><span class="w"> </span><span class="nf">ensure_daemon_running</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-0-1873" name="__codelineno-0-1873"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-1874" name="__codelineno-0-1874"></a><span class="sd">    Ensure daemon is running, starting it automatically if needed.</span>
+<a id="__codelineno-0-1875" name="__codelineno-0-1875"></a>
+<a id="__codelineno-0-1876" name="__codelineno-0-1876"></a><span class="sd">    Checks if daemon is responsive via ping. If not responsive or not running,</span>
+<a id="__codelineno-0-1877" name="__codelineno-0-1877"></a><span class="sd">    starts the daemon automatically in the background.</span>
+<a id="__codelineno-0-1878" name="__codelineno-0-1878"></a>
+<a id="__codelineno-0-1879" name="__codelineno-0-1879"></a><span class="sd">    This is called by the CLI on every command invocation to ensure the daemon</span>
+<a id="__codelineno-0-1880" name="__codelineno-0-1880"></a><span class="sd">    is always available for IPC operations, event handling, and completion cache</span>
+<a id="__codelineno-0-1881" name="__codelineno-0-1881"></a><span class="sd">    management.</span>
+<a id="__codelineno-0-1882" name="__codelineno-0-1882"></a>
+<a id="__codelineno-0-1883" name="__codelineno-0-1883"></a><span class="sd">    Returns:</span>
+<a id="__codelineno-0-1884" name="__codelineno-0-1884"></a><span class="sd">        True if daemon is running (or successfully started), False on error</span>
+<a id="__codelineno-0-1885" name="__codelineno-0-1885"></a>
+<a id="__codelineno-0-1886" name="__codelineno-0-1886"></a><span class="sd">    Example:</span>
+<a id="__codelineno-0-1887" name="__codelineno-0-1887"></a><span class="sd">        ```python</span>
+<a id="__codelineno-0-1888" name="__codelineno-0-1888"></a><span class="sd">        &gt;&gt;&gt; ensure_daemon_running()</span>
+<a id="__codelineno-0-1889" name="__codelineno-0-1889"></a><span class="sd">        True  # Daemon is now guaranteed to be running</span>
+<a id="__codelineno-0-1890" name="__codelineno-0-1890"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-1891" name="__codelineno-0-1891"></a>
+<a id="__codelineno-0-1892" name="__codelineno-0-1892"></a><span class="sd">    Note:</span>
+<a id="__codelineno-0-1893" name="__codelineno-0-1893"></a><span class="sd">        Uses a 1-second timeout for ping check to avoid blocking CLI startup.</span>
+<a id="__codelineno-0-1894" name="__codelineno-0-1894"></a><span class="sd">        If daemon start fails, logs warning but returns False (non-fatal).</span>
+<a id="__codelineno-0-1895" name="__codelineno-0-1895"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-1896" name="__codelineno-0-1896"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-1897" name="__codelineno-0-1897"></a>        <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core.ipc</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_request_sync</span>
+<a id="__codelineno-0-1898" name="__codelineno-0-1898"></a>
+<a id="__codelineno-0-1899" name="__codelineno-0-1899"></a>        <span class="c1"># Check if daemon is responsive with short timeout</span>
+<a id="__codelineno-0-1900" name="__codelineno-0-1900"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-1901" name="__codelineno-0-1901"></a>            <span class="n">resp</span> <span class="o">=</span> <span class="n">send_request_sync</span><span class="p">({</span><span class="s2">&quot;cmd&quot;</span><span class="p">:</span> <span class="s2">&quot;ping&quot;</span><span class="p">},</span> <span class="n">timeout</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<a id="__codelineno-0-1902" name="__codelineno-0-1902"></a>            <span class="k">if</span> <span class="n">resp</span> <span class="ow">and</span> <span class="n">resp</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;ok&quot;</span><span class="p">):</span>
+<a id="__codelineno-0-1903" name="__codelineno-0-1903"></a>                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Daemon is already running (pid: </span><span class="si">%s</span><span class="s2">)&quot;</span><span class="p">,</span> <span class="n">_read_pid</span><span class="p">())</span>
+<a id="__codelineno-0-1904" name="__codelineno-0-1904"></a>                <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-0-1905" name="__codelineno-0-1905"></a>        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<a id="__codelineno-0-1906" name="__codelineno-0-1906"></a>            <span class="c1"># Daemon not responsive, will start it</span>
+<a id="__codelineno-0-1907" name="__codelineno-0-1907"></a>            <span class="k">pass</span>
+<a id="__codelineno-0-1908" name="__codelineno-0-1908"></a>
+<a id="__codelineno-0-1909" name="__codelineno-0-1909"></a>        <span class="c1"># Daemon not running or not responsive, start it</span>
+<a id="__codelineno-0-1910" name="__codelineno-0-1910"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Starting daemon automatically&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-1911" name="__codelineno-0-1911"></a>        <span class="n">success</span> <span class="o">=</span> <span class="n">start</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-1912" name="__codelineno-0-1912"></a>
+<a id="__codelineno-0-1913" name="__codelineno-0-1913"></a>        <span class="k">if</span> <span class="n">success</span><span class="p">:</span>
+<a id="__codelineno-0-1914" name="__codelineno-0-1914"></a>            <span class="c1"># Give daemon a moment to initialize socket</span>
+<a id="__codelineno-0-1915" name="__codelineno-0-1915"></a>            <span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<a id="__codelineno-0-1916" name="__codelineno-0-1916"></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.15</span><span class="p">)</span>  <span class="c1"># 150ms should be enough for socket creation</span>
+<a id="__codelineno-0-1917" name="__codelineno-0-1917"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Auto-started Axium daemon&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-1918" name="__codelineno-0-1918"></a>            <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-0-1919" name="__codelineno-0-1919"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-1920" name="__codelineno-0-1920"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Failed to auto-start daemon&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-1921" name="__codelineno-0-1921"></a>            <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-0-1922" name="__codelineno-0-1922"></a>
+<a id="__codelineno-0-1923" name="__codelineno-0-1923"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-0-1924" name="__codelineno-0-1924"></a>        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Error ensuring daemon is running: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span>
+<a id="__codelineno-0-1925" name="__codelineno-0-1925"></a>        <span class="k">return</span> <span class="kc">False</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
