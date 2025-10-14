@@ -12,13 +12,13 @@
         <meta name="author" content="Axium Team">
       
       
-        <link rel="canonical" href="https://docs.axium.tools/guides/writing-spokes/">
+        <link rel="canonical" href="https://docs.axium.tools/guides/hud-segments/">
       
       
-        <link rel="prev" href="../../concepts/tmux-integration/">
+        <link rel="prev" href="../writing-gears/">
       
       
-        <link rel="next" href="../writing-gears/">
+        <link rel="next" href="../../reference/events/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Writing Spokes - Axium Documentation</title>
+        <title>HUD Segments - Axium Documentation</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#axium-spokes-architecture-contribution-guide" class="md-skip">
+        <a href="#hud-segments-for-spokes" class="md-skip">
           Skip to content
         </a>
       
@@ -114,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Writing Spokes
+              HUD Segments
             
           </span>
         </div>
@@ -289,7 +289,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../writing-spokes/" class="md-tabs__link">
           
   
   
@@ -718,32 +718,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Writing Spokes
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../writing-spokes/" class="md-nav__link">
         
   
   
@@ -754,149 +732,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      Overview
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#philosophy-config-lives-in-core-logic-lives-in-spokes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔧 Philosophy: “Config lives in core, logic lives in Spokes”
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-a-spoke-is" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 What a Spoke is
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-spokes-can-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ What Spokes Can Do
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      🪝 Event System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🪝 Event System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-events" class="md-nav__link">
-    <span class="md-ellipsis">
-      Core Events
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#spoke-lifecycle" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 Spoke Lifecycle
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#directory-layout-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      📦 Directory Layout Example
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-command-wrapper-spoke" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧱 Example: Command Wrapper Spoke
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-spokes-should-not-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚫 What Spokes Should NOT Do
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-access-for-spokes" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 Data Access for Spokes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contribution-guidelines-for-spokes" class="md-nav__link">
-    <span class="md-ellipsis">
-      ✅ Contribution Guidelines for Spokes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#design-summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 Design Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -929,10 +764,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../hud-segments/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    HUD Segments
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -943,6 +800,146 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-1-hudsegment-classes-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 1: HudSegment Classes (Recommended)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Method 1: HudSegment Classes (Recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conditional-rendering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditional Rendering
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#method-2-dynamic-updates-best-for-expensive-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 2: Dynamic Updates (Best for Expensive Checks)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Performance Guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#priority-guidelines" class="md-nav__link">
+    <span class="md-ellipsis">
+      Priority Guidelines
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-segments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Segments
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k8s-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      K8s Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Branch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#see-also" class="md-nav__link">
+    <span class="md-ellipsis">
+      See Also
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1355,46 +1352,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#philosophy-config-lives-in-core-logic-lives-in-spokes" class="md-nav__link">
+  <a href="#method-1-hudsegment-classes-recommended" class="md-nav__link">
     <span class="md-ellipsis">
-      🔧 Philosophy: “Config lives in core, logic lives in Spokes”
+      Method 1: HudSegment Classes (Recommended)
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-a-spoke-is" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧠 What a Spoke is
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-spokes-can-do" class="md-nav__link">
-    <span class="md-ellipsis">
-      ⚙️ What Spokes Can Do
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#event-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      🪝 Event System
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🪝 Event System">
+    <nav class="md-nav" aria-label="Method 1: HudSegment Classes (Recommended)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#core-events" class="md-nav__link">
+  <a href="#conditional-rendering" class="md-nav__link">
     <span class="md-ellipsis">
-      Core Events
+      Conditional Rendering
     </span>
   </a>
   
@@ -1406,63 +1376,87 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#spoke-lifecycle" class="md-nav__link">
+  <a href="#method-2-dynamic-updates-best-for-expensive-checks" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Spoke Lifecycle
+      Method 2: Dynamic Updates (Best for Expensive Checks)
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#directory-layout-example" class="md-nav__link">
+  <a href="#comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Directory Layout Example
+      Comparison
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-command-wrapper-spoke" class="md-nav__link">
+  <a href="#performance-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
-      🧱 Example: Command Wrapper Spoke
+      Performance Guidelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-spokes-should-not-do" class="md-nav__link">
+  <a href="#priority-guidelines" class="md-nav__link">
     <span class="md-ellipsis">
-      🚫 What Spokes Should NOT Do
+      Priority Guidelines
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#data-access-for-spokes" class="md-nav__link">
+  <a href="#testing-segments" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Data Access for Spokes
+      Testing Segments
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contribution-guidelines-for-spokes" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Contribution Guidelines for Spokes
+      Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#k8s-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      K8s Context
     </span>
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git Branch
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
-  <a href="#design-summary" class="md-nav__link">
+  <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
-      🧠 Design Summary
+      See Also
     </span>
   </a>
   
@@ -1487,257 +1481,204 @@
   
 
 
-<h1 id="axium-spokes-architecture-contribution-guide">🧩 Axium Spokes: Architecture &amp; Contribution Guide<a class="headerlink" href="#axium-spokes-architecture-contribution-guide" title="Permanent link">&para;</a></h1>
-<p><em>Axium’s Spokes are how we extend the platform — logic, not config.</em></p>
-<hr />
+<h1 id="hud-segments-for-spokes">HUD Segments for Spokes<a class="headerlink" href="#hud-segments-for-spokes" title="Permanent link">&para;</a></h1>
+<p>This guide shows how spokes can add custom segments to the Axium HUD.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>Spokes are <strong>lightweight Python modules</strong> that extend Axium’s behavior by registering <strong>hooks, commands, and integrations</strong>.
-They never carry their own configuration files.
-All persistent data lives in Axium’s core config (like <code>envs.yaml</code>, <code>prefixes.yaml</code>, <code>settings.yaml</code>).</p>
-<p>This design keeps Axium declarative, deterministic, and reloadable at runtime.</p>
-<hr />
-<h2 id="philosophy-config-lives-in-core-logic-lives-in-spokes">🔧 Philosophy: “Config lives in core, logic lives in Spokes”<a class="headerlink" href="#philosophy-config-lives-in-core-logic-lives-in-spokes" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Responsibility</th>
-<th>Lives in</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Persistent configuration</td>
-<td><strong>Core</strong></td>
-<td><code>~/.config/axium/envs.yaml</code>, <code>prefixes.yaml</code></td>
-</tr>
-<tr>
-<td>Runtime logic &amp; integrations</td>
-<td><strong>Spokes</strong></td>
-<td>Hooks, commands, event listeners</td>
-</tr>
-<tr>
-<td>Declarative state</td>
-<td><strong>Daemon</strong></td>
-<td><code>state.json</code> (active env, status)</td>
-</tr>
-<tr>
-<td>Execution context</td>
-<td><strong>Command wrapper</strong></td>
-<td><code>axium run &lt;cmd&gt;</code></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="what-a-spoke-is">🧠 What a Spoke <em>is</em><a class="headerlink" href="#what-a-spoke-is" title="Permanent link">&para;</a></h2>
-<p>A Spoke is just a Python file (or package) that exports a single <code>register()</code> function.</p>
-<div class="highlight"><pre><span></span><code>def register(app, events):
-    # Add CLI commands
-    @app.command(&quot;aws-whoami&quot;)
-    def aws_whoami():
-        import boto3
-        print(boto3.client(&quot;sts&quot;).get_caller_identity())
-
-    # Subscribe to events
-    def on_env_change(new_env):
-        print(f&quot;[spoke:aws] environment changed → {new_env}&quot;)
-    events.on(&quot;env_change&quot;, on_env_change)
-
-    # Access environment data
-    from axium.core import env
-    current_env = env.get_active_env_name()
-    prefix = env.get_env_value(&quot;prefix&quot;)
-</code></pre></div>
-<p>That's it.
-No YAML, no hidden state, no user configuration.</p>
-<hr />
-<h2 id="what-spokes-can-do">⚙️ What Spokes Can Do<a class="headerlink" href="#what-spokes-can-do" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Capability</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Register CLI commands</strong></td>
-<td>Add subcommands to <code>axium</code></td>
-<td><code>axium aws-whoami</code></td>
-</tr>
-<tr>
-<td><strong>Hook into events</strong></td>
-<td>React to daemon or CLI lifecycle</td>
-<td><code>on_env_change</code>, <code>on_prefix_apply</code></td>
-</tr>
-<tr>
-<td><strong>Extend prefix logic</strong></td>
-<td>Register new prefix rules dynamically</td>
-<td><code>register_prefix("aws", prefix="enva-${axium_env}")</code></td>
-</tr>
-<tr>
-<td><strong>Add HUD / Palette elements</strong></td>
-<td>(Future) Display widgets or menu items</td>
-<td><code>register_hud_widget("aws-status")</code></td>
-</tr>
-<tr>
-<td><strong>Run background tasks</strong></td>
-<td>Schedule or poll data quietly via daemon hooks</td>
-<td>Example: refresh EC2 list every 60s</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="event-system">🪝 Event System<a class="headerlink" href="#event-system" title="Permanent link">&para;</a></h2>
-<p>Axium provides a synchronous event bus for runtime extensibility and coordination between Spokes.</p>
-<h3 id="core-events">Core Events<a class="headerlink" href="#core-events" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>When it triggers</th>
-<th>Common use</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>env_change(new_env, old_env)</code></td>
-<td>After <code>axium env set</code></td>
-<td>Update context, refresh credentials</td>
-</tr>
-<tr>
-<td><code>spoke_loaded(spoke_name)</code></td>
-<td>When a Spoke finishes loading</td>
-<td>Initialization, set initial HUD state</td>
-</tr>
-<tr>
-<td><code>spoke_reloaded(spoke_name)</code></td>
-<td>After <code>axium daemon reload</code></td>
-<td>Refresh config, clear caches</td>
-</tr>
-<tr>
-<td><code>daemon_reload()</code></td>
-<td>After daemon configuration reloads</td>
-<td>Reload spoke-specific config</td>
-</tr>
-<tr>
-<td><code>config_reloaded()</code></td>
-<td>After all spoke configs are cleared</td>
-<td>Re-read configuration files</td>
-</tr>
-<tr>
-<td><code>hud_segment_updated(spoke, value)</code></td>
-<td>When a HUD segment changes</td>
-<td>Coordinate related HUD segments</td>
-</tr>
-<tr>
-<td><code>hud_refresh()</code></td>
-<td>When HUD should be regenerated</td>
-<td>Update dynamic HUD segments</td>
-</tr>
-<tr>
-<td><code>gear_loaded(gear_name)</code></td>
-<td>When a Gear finishes loading</td>
-<td>Initialize gear integrations</td>
-</tr>
-</tbody>
-</table>
-<p>Events are registered via <code>events.on()</code> and receive arguments as shown. See the <a href="../../reference/events/">Events Reference</a> for complete details on signatures, timing, and best practices.</p>
-<hr />
-<h2 id="spoke-lifecycle">🧩 Spoke Lifecycle<a class="headerlink" href="#spoke-lifecycle" title="Permanent link">&para;</a></h2>
+<p>Spokes have two ways to add HUD segments:</p>
 <ol>
-<li><strong>Load</strong> – The daemon scans <code>spokes/</code> and imports each Spoke.</li>
-<li><strong>Register</strong> – Calls each Spoke's <code>register(app, events)</code> function.</li>
-<li><strong>Activate</strong> – Hooks and commands become live.</li>
-<li><strong>Reload</strong> – On demand (<code>axium daemon reload</code>) without restart.</li>
-<li><strong>Unload</strong> – When daemon exits or Spoke disables itself.</li>
+<li><strong>HudSegment classes</strong> (Recommended) - Register a segment that renders on every HUD update</li>
+<li><strong>Dynamic updates</strong> (For expensive checks) - Update a cached value via IPC when status changes</li>
 </ol>
-<p>Spokes can be safely added or removed between reloads — no reboot required.</p>
-<hr />
-<h2 id="directory-layout-example">📦 Directory Layout Example<a class="headerlink" href="#directory-layout-example" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>axium/
-  core/
-    prefix.py
-    env.py
-    spokes.py       # Loader
-  spokes/
-    aws_spoke.py
-    terraform_spoke.py
-    command_wrapper.py
-  ...
+<h2 id="method-1-hudsegment-classes-recommended">Method 1: HudSegment Classes (Recommended)<a class="headerlink" href="#method-1-hudsegment-classes-recommended" title="Permanent link">&para;</a></h2>
+<p>Use this for segments that need to compute their value on every render:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">axium.core.hud</span><span class="w"> </span><span class="kn">import</span> <span class="n">register_hud_segment</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">axium.core.hud_segments</span><span class="w"> </span><span class="kn">import</span> <span class="n">HudSegment</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">MyStatusSegment</span><span class="p">(</span><span class="n">HudSegment</span><span class="p">):</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Custom HUD segment for spoke.&quot;&quot;&quot;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;mystatus&quot;</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>  <span class="c1"># After core segments (5-20)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">enabled</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="sd">        Render the segment.</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="sd">        Args:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="sd">            context: Dict with keys:</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="sd">                - state: Daemon state dict</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="sd">                - pane_id: Optional tmux pane ID</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="sd">                - env: Active environment name</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="sd">                - started: Daemon start timestamp</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="sd">        Returns:</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="sd">            Segment string (e.g., &quot;[status:ok]&quot;)</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="sd">        &quot;&quot;&quot;</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="c1"># Access current environment</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        <span class="n">env</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        <span class="c1"># Compute status (fast operation)</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="n">status</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_status</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;[status:</span><span class="si">{</span><span class="n">status</span><span class="si">}</span><span class="s2">]&quot;</span>
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">check_status</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Check current status (called on every render).&quot;&quot;&quot;</span>
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        <span class="c1"># Keep this fast! Called ~1-2 times per second in tmux</span>
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        <span class="k">return</span> <span class="s2">&quot;ok&quot;</span> <span class="k">if</span> <span class="n">env</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span> <span class="k">else</span> <span class="s2">&quot;none&quot;</span>
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="c1"># In spoke&#39;s register() function:</span>
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">events</span><span class="p">):</span>
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>    <span class="c1"># Register HUD segment</span>
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>    <span class="n">register_hud_segment</span><span class="p">(</span><span class="n">MyStatusSegment</span><span class="p">())</span>
 </code></pre></div>
-<hr />
-<h2 id="example-command-wrapper-spoke">🧱 Example: Command Wrapper Spoke<a class="headerlink" href="#example-command-wrapper-spoke" title="Permanent link">&para;</a></h2>
-<p>This built-in Spoke handles all prefixed command execution.
-It defines the <code>axium run</code> CLI command and applies prefix rules before running binaries.</p>
-<div class="highlight"><pre><span></span><code>def register(app, events, env):
-    @app.command(&quot;run&quot;)
-    def run(cmd: list[str]):
-        from axium.core.prefix import apply_prefixes
-        full_cmd = apply_prefixes(cmd)
-        subprocess.run(full_cmd)
+<h3 id="conditional-rendering">Conditional Rendering<a class="headerlink" href="#conditional-rendering" title="Permanent link">&para;</a></h3>
+<p>Segments can implement <code>should_render()</code> for conditional display:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ConditionalSegment</span><span class="p">(</span><span class="n">HudSegment</span><span class="p">):</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;conditional&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">should_render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Only show in specific environments.&quot;&quot;&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="n">env</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">return</span> <span class="n">env</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;prod&quot;</span><span class="p">,</span> <span class="s2">&quot;staging&quot;</span><span class="p">]</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">return</span> <span class="s2">&quot;[critical]&quot;</span>
 </code></pre></div>
-<p>Other Spokes (like AWS or Terraform) simply register prefix metadata — not their own executors.</p>
-<hr />
-<h2 id="what-spokes-should-not-do">🚫 What Spokes Should NOT Do<a class="headerlink" href="#what-spokes-should-not-do" title="Permanent link">&para;</a></h2>
+<h2 id="method-2-dynamic-updates-best-for-expensive-checks">Method 2: Dynamic Updates (Best for Expensive Checks)<a class="headerlink" href="#method-2-dynamic-updates-best-for-expensive-checks" title="Permanent link">&para;</a></h2>
+<p>Use this when checking status is expensive (network calls, file I/O, etc.):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">axium.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">api</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">register</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">events</span><span class="p">):</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="c1"># Initial check</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">update_hud</span><span class="p">()</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="c1"># Update on environment change</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">events</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="s2">&quot;env_change&quot;</span><span class="p">,</span> <span class="k">lambda</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="n">update_hud</span><span class="p">())</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="c1"># Periodic updates (every 5 minutes)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">threading</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">periodic_update</span><span class="p">():</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>  <span class="c1"># 5 minutes</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="n">update_hud</span><span class="p">()</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">periodic_update</span><span class="p">,</span> <span class="n">daemon</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="k">def</span><span class="w"> </span><span class="nf">update_hud</span><span class="p">():</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Update cached HUD value (expensive operation).&quot;&quot;&quot;</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>    <span class="c1"># Expensive check (network, disk, etc.)</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>    <span class="n">is_valid</span> <span class="o">=</span> <span class="n">check_credentials</span><span class="p">()</span>  <span class="c1"># Slow!</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="c1"># Update cached value in daemon</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>    <span class="n">hud_value</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;[creds:</span><span class="si">{</span><span class="s1">&#39;Y&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_valid</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;N&#39;</span><span class="si">}</span><span class="s2">]&quot;</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a>    <span class="n">api</span><span class="o">.</span><span class="n">update_hud_segment</span><span class="p">(</span><span class="s2">&quot;myspoke&quot;</span><span class="p">,</span> <span class="n">hud_value</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>Don’t</th>
-<th>Reason</th>
+<th>Method</th>
+<th>Best For</th>
+<th>Pros</th>
+<th>Cons</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Store their own YAML or JSON config</td>
-<td>Breaks the declarative model</td>
+<td>HudSegment</td>
+<td>Fast computations</td>
+<td>Priority control, conditional rendering, testable</td>
+<td>More code</td>
 </tr>
 <tr>
-<td>Manage state directly</td>
-<td>The daemon owns runtime state</td>
+<td>Provider function</td>
+<td>Simple status</td>
+<td>Easy, one function</td>
+<td>Less control, no priorities</td>
 </tr>
 <tr>
-<td>Modify core files</td>
-<td>All extension points go through events or the app API</td>
-</tr>
-<tr>
-<td>Depend on other Spokes directly</td>
-<td>Use event hooks instead</td>
+<td>Dynamic update</td>
+<td>Expensive checks</td>
+<td>Doesn't slow HUD, caches value</td>
+<td>More complex, needs update logic</td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="data-access-for-spokes">🧩 Data Access for Spokes<a class="headerlink" href="#data-access-for-spokes" title="Permanent link">&para;</a></h2>
-<p>Spokes can safely read contextual data through <code>env</code> and <code>core</code> helpers.</p>
-<div class="highlight"><pre><span></span><code>env.current() → returns active env key (e.g. &quot;root&quot;)
-env.get(&quot;aws_profile&quot;) → returns property from envs.yaml
-env.all() → returns full envs.yaml mapping
-</code></pre></div>
-<p>They can also query or update via IPC if needed (<code>axiumd</code> exposes small APIs).</p>
-<hr />
-<h2 id="contribution-guidelines-for-spokes">✅ Contribution Guidelines for Spokes<a class="headerlink" href="#contribution-guidelines-for-spokes" title="Permanent link">&para;</a></h2>
-<ol>
-<li>Keep it <strong>stateless</strong> — no persistent config or files.</li>
-<li>Use <code>register()</code> with <code>(app, events, env)</code> signature.</li>
-<li>Prefer declarative config in core (<code>envs.yaml</code>, etc.).</li>
-<li>Ensure commands are <strong>namespaced</strong> (<code>axium aws-*</code>, <code>axium tf-*</code>).</li>
-<li>Use events for coordination between Spokes.</li>
-<li>Document any external dependencies (e.g., boto3).</li>
-<li>Avoid blocking calls — use async when possible.</li>
-</ol>
-<hr />
-<h2 id="design-summary">🧠 Design Summary<a class="headerlink" href="#design-summary" title="Permanent link">&para;</a></h2>
+<h2 id="performance-guidelines">Performance Guidelines<a class="headerlink" href="#performance-guidelines" title="Permanent link">&para;</a></h2>
+<p><strong>HUD renders frequently in tmux (~1-2 times per second)</strong></p>
 <ul>
-<li>Axium owns all persistent config (YAML, state).</li>
-<li>Spokes are pure Python runtime extensions.</li>
-<li>Each Spoke registers commands and event hooks.</li>
-<li>The daemon orchestrates, reloads, and isolates them.</li>
-<li>Core provides shared APIs for envs, prefixing, state, and IPC.</li>
+<li>✅ <strong>DO</strong>: Keep render() fast (&lt;5ms)</li>
+<li>✅ <strong>DO</strong>: Use context data (already available)</li>
+<li>✅ <strong>DO</strong>: Cache expensive checks and update periodically</li>
+<li>❌ <strong>DON'T</strong>: Make network calls in render()</li>
+<li>❌ <strong>DON'T</strong>: Read files in render()</li>
+<li>❌ <strong>DON'T</strong>: Run subprocesses in render()</li>
 </ul>
-<p><strong>Declarative data. Procedural extensions. One consistent model.</strong></p>
-<hr />
-<p><em>This doc complements <code>CONTRIBUTING.md</code> by describing how to author and structure new Spokes.</em></p>
+<h2 id="priority-guidelines">Priority Guidelines<a class="headerlink" href="#priority-guidelines" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>0-4</strong>: Reserved (future use)</li>
+<li><strong>5-9</strong>: Pane ID (PaneSegment)</li>
+<li><strong>10-19</strong>: Core segments (Environment, Uptime)</li>
+<li><strong>20-99</strong>: System extensions</li>
+<li><strong>100+</strong>: Spoke segments (recommended)</li>
+</ul>
+<h2 id="testing-segments">Testing Segments<a class="headerlink" href="#testing-segments" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">test_my_segment</span><span class="p">():</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Test HUD segment rendering.&quot;&quot;&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">segment</span> <span class="o">=</span> <span class="n">MyStatusSegment</span><span class="p">()</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">context</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="s2">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;prod&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        <span class="s2">&quot;pane_id&quot;</span><span class="p">:</span> <span class="s2">&quot;%1&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        <span class="s2">&quot;started&quot;</span><span class="p">:</span> <span class="s2">&quot;2024-01-01T00:00:00Z&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="p">}</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    <span class="n">result</span> <span class="o">=</span> <span class="n">segment</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">context</span><span class="p">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">assert</span> <span class="s2">&quot;[status:&quot;</span> <span class="ow">in</span> <span class="n">result</span>
+</code></pre></div>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="k8s-context">K8s Context<a class="headerlink" href="#k8s-context" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">K8sContextSegment</span><span class="p">(</span><span class="n">HudSegment</span><span class="p">):</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;k8s&quot;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">priority</span> <span class="o">=</span> <span class="mi">100</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="c1"># Fast: read from env var set by kubectl</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="n">ctx</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;KUBECONFIG_CONTEXT&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;☸ </span><span class="si">{</span><span class="n">ctx</span><span class="si">}</span><span class="s2">&quot;</span>
+</code></pre></div>
+<h3 id="git-branch">Git Branch<a class="headerlink" href="#git-branch" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">GitBranchSegment</span><span class="p">(</span><span class="n">HudSegment</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;git&quot;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">priority</span> <span class="o">=</span> <span class="mi">110</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">should_render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="c1"># Only show in development envs</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="k">return</span> <span class="n">context</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;env&quot;</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;dev&quot;</span><span class="p">,</span> <span class="s2">&quot;local&quot;</span><span class="p">]</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>            <span class="n">branch</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">check_output</span><span class="p">(</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>                <span class="p">[</span><span class="s2">&quot;git&quot;</span><span class="p">,</span> <span class="s2">&quot;branch&quot;</span><span class="p">,</span> <span class="s2">&quot;--show-current&quot;</span><span class="p">],</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>                <span class="n">cwd</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>                <span class="n">stderr</span><span class="o">=</span><span class="n">subprocess</span><span class="o">.</span><span class="n">DEVNULL</span><span class="p">,</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>                <span class="n">timeout</span><span class="o">=</span><span class="mf">0.1</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>            <span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a>            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;± </span><span class="si">{</span><span class="n">branch</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+</code></pre></div>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../reference/hud-segments.md">HUD Segments API Reference</a></li>
+<li><a href="../writing-spokes/">Spoke Development Guide</a></li>
+<li><a href="../concepts/hud.md">HUD Configuration</a></li>
+</ul>
 
 
 
