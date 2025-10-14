@@ -1398,6 +1398,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#axium.core.cli.hud_theme_cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;hud_theme_cmd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#axium.core.cli.palette_cmd" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;palette_cmd
@@ -1611,7 +1620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../development/ROADMAP/" class="md-nav__link">
+      <a href="../../../development/ROADMAP.md" class="md-nav__link">
         
   
   
@@ -2067,6 +2076,15 @@
   <a href="#axium.core.cli.hud_reload_cmd" class="md-nav__link">
     <span class="md-ellipsis">
       <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;hud_reload_cmd
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axium.core.cli.hud_theme_cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      <code class="doc-symbol doc-symbol-toc doc-symbol-function"></code>&nbsp;hud_theme_cmd
     </span>
   </a>
   
@@ -8790,6 +8808,368 @@ active panes. Use this after modifying hud.yaml to apply changes.</p>
 <div class="doc doc-object doc-function">
 
 
+<h3 id="axium.core.cli.hud_theme_cmd" class="doc doc-heading">
+<code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">hud_theme_cmd</span><span class="p">(</span><span class="n">action</span><span class="o">=</span><span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Action: list, show, set &lt;name&gt;&#39;</span><span class="p">),</span> <span class="n">theme_name</span><span class="o">=</span><span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Theme name for &#39;set&#39; action&quot;</span><span class="p">))</span></code>
+
+<a href="#axium.core.cli.hud_theme_cmd" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Manage HUD color themes.</p>
+<p>Themes provide customizable color schemes for HUD output. Themes are
+disabled by default and can be enabled by setting a theme in hud.yaml.</p>
+
+
+<details class="available-themes" open>
+  <summary>Available themes</summary>
+  <ul>
+<li>classic: Standard ANSI colors (white, cyan, yellow, red, green)</li>
+<li>teal: Axium brand colors (#00B7C7 teal, soft white)</li>
+<li>dim: Dimmed colors for low-contrast terminals</li>
+<li>inverted: Dark colors for light backgrounds</li>
+<li>mono: No colors (plain text)</li>
+<li>soft: Pastel colors for gentle aesthetics</li>
+</ul>
+</details>
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>action</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Action to perform (list, show, set)</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="typer.Argument">Argument</span>(..., help=&#39;Action: list, show, set &lt;name&gt;&#39;)</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>theme_name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Theme name when using 'set' action</p>
+              </div>
+            </td>
+            <td>
+                  <code><span title="typer.Argument">Argument</span>(None, help=&#34;Theme name for &#39;set&#39; action&#34;)</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<details class="example" open>
+  <summary>Example</summary>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>axium<span class="w"> </span>hud<span class="w"> </span>theme<span class="w"> </span>list
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Available<span class="w"> </span>themes:
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span>-<span class="w"> </span>classic
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span>-<span class="w"> </span>dim
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span>-<span class="w"> </span>inverted
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span>-<span class="w"> </span>mono
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span>-<span class="w"> </span>soft
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span>-<span class="w"> </span>teal
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>$<span class="w"> </span>axium<span class="w"> </span>hud<span class="w"> </span>theme<span class="w"> </span>show
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Theme:<span class="w"> </span>classic
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>Enabled:<span class="w"> </span><span class="nb">false</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>$<span class="w"> </span>axium<span class="w"> </span>hud<span class="w"> </span>theme<span class="w"> </span><span class="nb">set</span><span class="w"> </span>teal
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>Theme<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to<span class="w"> </span><span class="s1">&#39;teal&#39;</span>
+</code></pre></div>
+</details>
+
+<details class="note" open>
+  <summary>Note</summary>
+  <p>Themes are opt-in to preserve Axium's silent design philosophy.
+Edit ~/.config/axium/hud.yaml to manually enable/disable themes.</p>
+</details>
+
+            <details class="quote">
+              <summary>Source code in <code>axium/core/cli.py</code></summary>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2414">2414</a></span>
+<span class="normal"><a href="#__codelineno-0-2415">2415</a></span>
+<span class="normal"><a href="#__codelineno-0-2416">2416</a></span>
+<span class="normal"><a href="#__codelineno-0-2417">2417</a></span>
+<span class="normal"><a href="#__codelineno-0-2418">2418</a></span>
+<span class="normal"><a href="#__codelineno-0-2419">2419</a></span>
+<span class="normal"><a href="#__codelineno-0-2420">2420</a></span>
+<span class="normal"><a href="#__codelineno-0-2421">2421</a></span>
+<span class="normal"><a href="#__codelineno-0-2422">2422</a></span>
+<span class="normal"><a href="#__codelineno-0-2423">2423</a></span>
+<span class="normal"><a href="#__codelineno-0-2424">2424</a></span>
+<span class="normal"><a href="#__codelineno-0-2425">2425</a></span>
+<span class="normal"><a href="#__codelineno-0-2426">2426</a></span>
+<span class="normal"><a href="#__codelineno-0-2427">2427</a></span>
+<span class="normal"><a href="#__codelineno-0-2428">2428</a></span>
+<span class="normal"><a href="#__codelineno-0-2429">2429</a></span>
+<span class="normal"><a href="#__codelineno-0-2430">2430</a></span>
+<span class="normal"><a href="#__codelineno-0-2431">2431</a></span>
+<span class="normal"><a href="#__codelineno-0-2432">2432</a></span>
+<span class="normal"><a href="#__codelineno-0-2433">2433</a></span>
+<span class="normal"><a href="#__codelineno-0-2434">2434</a></span>
+<span class="normal"><a href="#__codelineno-0-2435">2435</a></span>
+<span class="normal"><a href="#__codelineno-0-2436">2436</a></span>
+<span class="normal"><a href="#__codelineno-0-2437">2437</a></span>
+<span class="normal"><a href="#__codelineno-0-2438">2438</a></span>
+<span class="normal"><a href="#__codelineno-0-2439">2439</a></span>
+<span class="normal"><a href="#__codelineno-0-2440">2440</a></span>
+<span class="normal"><a href="#__codelineno-0-2441">2441</a></span>
+<span class="normal"><a href="#__codelineno-0-2442">2442</a></span>
+<span class="normal"><a href="#__codelineno-0-2443">2443</a></span>
+<span class="normal"><a href="#__codelineno-0-2444">2444</a></span>
+<span class="normal"><a href="#__codelineno-0-2445">2445</a></span>
+<span class="normal"><a href="#__codelineno-0-2446">2446</a></span>
+<span class="normal"><a href="#__codelineno-0-2447">2447</a></span>
+<span class="normal"><a href="#__codelineno-0-2448">2448</a></span>
+<span class="normal"><a href="#__codelineno-0-2449">2449</a></span>
+<span class="normal"><a href="#__codelineno-0-2450">2450</a></span>
+<span class="normal"><a href="#__codelineno-0-2451">2451</a></span>
+<span class="normal"><a href="#__codelineno-0-2452">2452</a></span>
+<span class="normal"><a href="#__codelineno-0-2453">2453</a></span>
+<span class="normal"><a href="#__codelineno-0-2454">2454</a></span>
+<span class="normal"><a href="#__codelineno-0-2455">2455</a></span>
+<span class="normal"><a href="#__codelineno-0-2456">2456</a></span>
+<span class="normal"><a href="#__codelineno-0-2457">2457</a></span>
+<span class="normal"><a href="#__codelineno-0-2458">2458</a></span>
+<span class="normal"><a href="#__codelineno-0-2459">2459</a></span>
+<span class="normal"><a href="#__codelineno-0-2460">2460</a></span>
+<span class="normal"><a href="#__codelineno-0-2461">2461</a></span>
+<span class="normal"><a href="#__codelineno-0-2462">2462</a></span>
+<span class="normal"><a href="#__codelineno-0-2463">2463</a></span>
+<span class="normal"><a href="#__codelineno-0-2464">2464</a></span>
+<span class="normal"><a href="#__codelineno-0-2465">2465</a></span>
+<span class="normal"><a href="#__codelineno-0-2466">2466</a></span>
+<span class="normal"><a href="#__codelineno-0-2467">2467</a></span>
+<span class="normal"><a href="#__codelineno-0-2468">2468</a></span>
+<span class="normal"><a href="#__codelineno-0-2469">2469</a></span>
+<span class="normal"><a href="#__codelineno-0-2470">2470</a></span>
+<span class="normal"><a href="#__codelineno-0-2471">2471</a></span>
+<span class="normal"><a href="#__codelineno-0-2472">2472</a></span>
+<span class="normal"><a href="#__codelineno-0-2473">2473</a></span>
+<span class="normal"><a href="#__codelineno-0-2474">2474</a></span>
+<span class="normal"><a href="#__codelineno-0-2475">2475</a></span>
+<span class="normal"><a href="#__codelineno-0-2476">2476</a></span>
+<span class="normal"><a href="#__codelineno-0-2477">2477</a></span>
+<span class="normal"><a href="#__codelineno-0-2478">2478</a></span>
+<span class="normal"><a href="#__codelineno-0-2479">2479</a></span>
+<span class="normal"><a href="#__codelineno-0-2480">2480</a></span>
+<span class="normal"><a href="#__codelineno-0-2481">2481</a></span>
+<span class="normal"><a href="#__codelineno-0-2482">2482</a></span>
+<span class="normal"><a href="#__codelineno-0-2483">2483</a></span>
+<span class="normal"><a href="#__codelineno-0-2484">2484</a></span>
+<span class="normal"><a href="#__codelineno-0-2485">2485</a></span>
+<span class="normal"><a href="#__codelineno-0-2486">2486</a></span>
+<span class="normal"><a href="#__codelineno-0-2487">2487</a></span>
+<span class="normal"><a href="#__codelineno-0-2488">2488</a></span>
+<span class="normal"><a href="#__codelineno-0-2489">2489</a></span>
+<span class="normal"><a href="#__codelineno-0-2490">2490</a></span>
+<span class="normal"><a href="#__codelineno-0-2491">2491</a></span>
+<span class="normal"><a href="#__codelineno-0-2492">2492</a></span>
+<span class="normal"><a href="#__codelineno-0-2493">2493</a></span>
+<span class="normal"><a href="#__codelineno-0-2494">2494</a></span>
+<span class="normal"><a href="#__codelineno-0-2495">2495</a></span>
+<span class="normal"><a href="#__codelineno-0-2496">2496</a></span>
+<span class="normal"><a href="#__codelineno-0-2497">2497</a></span>
+<span class="normal"><a href="#__codelineno-0-2498">2498</a></span>
+<span class="normal"><a href="#__codelineno-0-2499">2499</a></span>
+<span class="normal"><a href="#__codelineno-0-2500">2500</a></span>
+<span class="normal"><a href="#__codelineno-0-2501">2501</a></span>
+<span class="normal"><a href="#__codelineno-0-2502">2502</a></span>
+<span class="normal"><a href="#__codelineno-0-2503">2503</a></span>
+<span class="normal"><a href="#__codelineno-0-2504">2504</a></span>
+<span class="normal"><a href="#__codelineno-0-2505">2505</a></span>
+<span class="normal"><a href="#__codelineno-0-2506">2506</a></span>
+<span class="normal"><a href="#__codelineno-0-2507">2507</a></span>
+<span class="normal"><a href="#__codelineno-0-2508">2508</a></span>
+<span class="normal"><a href="#__codelineno-0-2509">2509</a></span>
+<span class="normal"><a href="#__codelineno-0-2510">2510</a></span>
+<span class="normal"><a href="#__codelineno-0-2511">2511</a></span>
+<span class="normal"><a href="#__codelineno-0-2512">2512</a></span>
+<span class="normal"><a href="#__codelineno-0-2513">2513</a></span>
+<span class="normal"><a href="#__codelineno-0-2514">2514</a></span>
+<span class="normal"><a href="#__codelineno-0-2515">2515</a></span>
+<span class="normal"><a href="#__codelineno-0-2516">2516</a></span>
+<span class="normal"><a href="#__codelineno-0-2517">2517</a></span>
+<span class="normal"><a href="#__codelineno-0-2518">2518</a></span>
+<span class="normal"><a href="#__codelineno-0-2519">2519</a></span>
+<span class="normal"><a href="#__codelineno-0-2520">2520</a></span>
+<span class="normal"><a href="#__codelineno-0-2521">2521</a></span>
+<span class="normal"><a href="#__codelineno-0-2522">2522</a></span>
+<span class="normal"><a href="#__codelineno-0-2523">2523</a></span>
+<span class="normal"><a href="#__codelineno-0-2524">2524</a></span>
+<span class="normal"><a href="#__codelineno-0-2525">2525</a></span>
+<span class="normal"><a href="#__codelineno-0-2526">2526</a></span>
+<span class="normal"><a href="#__codelineno-0-2527">2527</a></span>
+<span class="normal"><a href="#__codelineno-0-2528">2528</a></span>
+<span class="normal"><a href="#__codelineno-0-2529">2529</a></span>
+<span class="normal"><a href="#__codelineno-0-2530">2530</a></span>
+<span class="normal"><a href="#__codelineno-0-2531">2531</a></span>
+<span class="normal"><a href="#__codelineno-0-2532">2532</a></span>
+<span class="normal"><a href="#__codelineno-0-2533">2533</a></span>
+<span class="normal"><a href="#__codelineno-0-2534">2534</a></span>
+<span class="normal"><a href="#__codelineno-0-2535">2535</a></span>
+<span class="normal"><a href="#__codelineno-0-2536">2536</a></span>
+<span class="normal"><a href="#__codelineno-0-2537">2537</a></span>
+<span class="normal"><a href="#__codelineno-0-2538">2538</a></span>
+<span class="normal"><a href="#__codelineno-0-2539">2539</a></span>
+<span class="normal"><a href="#__codelineno-0-2540">2540</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2414" name="__codelineno-0-2414"></a><span class="nd">@hud_app</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;theme&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2415" name="__codelineno-0-2415"></a><span class="k">def</span><span class="w"> </span><span class="nf">hud_theme_cmd</span><span class="p">(</span>
+<a id="__codelineno-0-2416" name="__codelineno-0-2416"></a>    <span class="n">action</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Action: list, show, set &lt;name&gt;&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-2417" name="__codelineno-0-2417"></a>    <span class="n">theme_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Argument</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Theme name for &#39;set&#39; action&quot;</span><span class="p">),</span>
+<a id="__codelineno-0-2418" name="__codelineno-0-2418"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-2419" name="__codelineno-0-2419"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-2420" name="__codelineno-0-2420"></a><span class="sd">    Manage HUD color themes.</span>
+<a id="__codelineno-0-2421" name="__codelineno-0-2421"></a>
+<a id="__codelineno-0-2422" name="__codelineno-0-2422"></a><span class="sd">    Themes provide customizable color schemes for HUD output. Themes are</span>
+<a id="__codelineno-0-2423" name="__codelineno-0-2423"></a><span class="sd">    disabled by default and can be enabled by setting a theme in hud.yaml.</span>
+<a id="__codelineno-0-2424" name="__codelineno-0-2424"></a>
+<a id="__codelineno-0-2425" name="__codelineno-0-2425"></a><span class="sd">    Available themes:</span>
+<a id="__codelineno-0-2426" name="__codelineno-0-2426"></a><span class="sd">        - classic: Standard ANSI colors (white, cyan, yellow, red, green)</span>
+<a id="__codelineno-0-2427" name="__codelineno-0-2427"></a><span class="sd">        - teal: Axium brand colors (#00B7C7 teal, soft white)</span>
+<a id="__codelineno-0-2428" name="__codelineno-0-2428"></a><span class="sd">        - dim: Dimmed colors for low-contrast terminals</span>
+<a id="__codelineno-0-2429" name="__codelineno-0-2429"></a><span class="sd">        - inverted: Dark colors for light backgrounds</span>
+<a id="__codelineno-0-2430" name="__codelineno-0-2430"></a><span class="sd">        - mono: No colors (plain text)</span>
+<a id="__codelineno-0-2431" name="__codelineno-0-2431"></a><span class="sd">        - soft: Pastel colors for gentle aesthetics</span>
+<a id="__codelineno-0-2432" name="__codelineno-0-2432"></a>
+<a id="__codelineno-0-2433" name="__codelineno-0-2433"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-2434" name="__codelineno-0-2434"></a><span class="sd">        action: Action to perform (list, show, set)</span>
+<a id="__codelineno-0-2435" name="__codelineno-0-2435"></a><span class="sd">        theme_name: Theme name when using &#39;set&#39; action</span>
+<a id="__codelineno-0-2436" name="__codelineno-0-2436"></a>
+<a id="__codelineno-0-2437" name="__codelineno-0-2437"></a><span class="sd">    Example:</span>
+<a id="__codelineno-0-2438" name="__codelineno-0-2438"></a><span class="sd">        ```bash</span>
+<a id="__codelineno-0-2439" name="__codelineno-0-2439"></a><span class="sd">        $ axium hud theme list</span>
+<a id="__codelineno-0-2440" name="__codelineno-0-2440"></a><span class="sd">        Available themes:</span>
+<a id="__codelineno-0-2441" name="__codelineno-0-2441"></a><span class="sd">          - classic</span>
+<a id="__codelineno-0-2442" name="__codelineno-0-2442"></a><span class="sd">          - dim</span>
+<a id="__codelineno-0-2443" name="__codelineno-0-2443"></a><span class="sd">          - inverted</span>
+<a id="__codelineno-0-2444" name="__codelineno-0-2444"></a><span class="sd">          - mono</span>
+<a id="__codelineno-0-2445" name="__codelineno-0-2445"></a><span class="sd">          - soft</span>
+<a id="__codelineno-0-2446" name="__codelineno-0-2446"></a><span class="sd">          - teal</span>
+<a id="__codelineno-0-2447" name="__codelineno-0-2447"></a>
+<a id="__codelineno-0-2448" name="__codelineno-0-2448"></a><span class="sd">        $ axium hud theme show</span>
+<a id="__codelineno-0-2449" name="__codelineno-0-2449"></a><span class="sd">        Theme: classic</span>
+<a id="__codelineno-0-2450" name="__codelineno-0-2450"></a><span class="sd">        Enabled: false</span>
+<a id="__codelineno-0-2451" name="__codelineno-0-2451"></a>
+<a id="__codelineno-0-2452" name="__codelineno-0-2452"></a><span class="sd">        $ axium hud theme set teal</span>
+<a id="__codelineno-0-2453" name="__codelineno-0-2453"></a><span class="sd">        Theme set to &#39;teal&#39;</span>
+<a id="__codelineno-0-2454" name="__codelineno-0-2454"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-2455" name="__codelineno-0-2455"></a>
+<a id="__codelineno-0-2456" name="__codelineno-0-2456"></a><span class="sd">    Note:</span>
+<a id="__codelineno-0-2457" name="__codelineno-0-2457"></a><span class="sd">        Themes are opt-in to preserve Axium&#39;s silent design philosophy.</span>
+<a id="__codelineno-0-2458" name="__codelineno-0-2458"></a><span class="sd">        Edit ~/.config/axium/hud.yaml to manually enable/disable themes.</span>
+<a id="__codelineno-0-2459" name="__codelineno-0-2459"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-2460" name="__codelineno-0-2460"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core.hud_themes</span><span class="w"> </span><span class="kn">import</span> <span class="n">list_themes</span>
+<a id="__codelineno-0-2461" name="__codelineno-0-2461"></a>
+<a id="__codelineno-0-2462" name="__codelineno-0-2462"></a>    <span class="k">if</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;list&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-2463" name="__codelineno-0-2463"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Available themes:&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2464" name="__codelineno-0-2464"></a>        <span class="k">for</span> <span class="n">theme</span> <span class="ow">in</span> <span class="n">list_themes</span><span class="p">():</span>
+<a id="__codelineno-0-2465" name="__codelineno-0-2465"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - </span><span class="si">{</span><span class="n">theme</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2466" name="__codelineno-0-2466"></a>    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;show&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-2467" name="__codelineno-0-2467"></a>        <span class="c1"># Read current theme from hud.yaml</span>
+<a id="__codelineno-0-2468" name="__codelineno-0-2468"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-2469" name="__codelineno-0-2469"></a>            <span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<a id="__codelineno-0-2470" name="__codelineno-0-2470"></a>            <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<a id="__codelineno-0-2471" name="__codelineno-0-2471"></a>
+<a id="__codelineno-0-2472" name="__codelineno-0-2472"></a>            <span class="n">hud_yaml</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;.config&quot;</span> <span class="o">/</span> <span class="s2">&quot;axium&quot;</span> <span class="o">/</span> <span class="s2">&quot;hud.yaml&quot;</span>
+<a id="__codelineno-0-2473" name="__codelineno-0-2473"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">hud_yaml</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+<a id="__codelineno-0-2474" name="__codelineno-0-2474"></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hud.yaml not found - run &#39;axium bootstrap&#39; first&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2475" name="__codelineno-0-2475"></a>                <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2476" name="__codelineno-0-2476"></a>
+<a id="__codelineno-0-2477" name="__codelineno-0-2477"></a>            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hud_yaml</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-2478" name="__codelineno-0-2478"></a>                <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-0-2479" name="__codelineno-0-2479"></a>
+<a id="__codelineno-0-2480" name="__codelineno-0-2480"></a>            <span class="n">theme_config</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;style&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;theme&quot;</span><span class="p">,</span> <span class="p">{})</span>
+<a id="__codelineno-0-2481" name="__codelineno-0-2481"></a>            <span class="n">theme_name</span> <span class="o">=</span> <span class="n">theme_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;classic&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2482" name="__codelineno-0-2482"></a>            <span class="n">theme_enabled</span> <span class="o">=</span> <span class="n">theme_config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;enabled&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-2483" name="__codelineno-0-2483"></a>
+<a id="__codelineno-0-2484" name="__codelineno-0-2484"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Theme: </span><span class="si">{</span><span class="n">theme_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2485" name="__codelineno-0-2485"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Enabled: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">theme_enabled</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2486" name="__codelineno-0-2486"></a>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-0-2487" name="__codelineno-0-2487"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to read theme config: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2488" name="__codelineno-0-2488"></a>            <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2489" name="__codelineno-0-2489"></a>    <span class="k">elif</span> <span class="n">action</span> <span class="o">==</span> <span class="s2">&quot;set&quot;</span><span class="p">:</span>
+<a id="__codelineno-0-2490" name="__codelineno-0-2490"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">theme_name</span><span class="p">:</span>
+<a id="__codelineno-0-2491" name="__codelineno-0-2491"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Theme name required for &#39;set&#39; action&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2492" name="__codelineno-0-2492"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Usage: axium hud theme set &lt;name&gt;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2493" name="__codelineno-0-2493"></a>            <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2494" name="__codelineno-0-2494"></a>
+<a id="__codelineno-0-2495" name="__codelineno-0-2495"></a>        <span class="c1"># Validate theme name</span>
+<a id="__codelineno-0-2496" name="__codelineno-0-2496"></a>        <span class="k">if</span> <span class="n">theme_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">list_themes</span><span class="p">():</span>
+<a id="__codelineno-0-2497" name="__codelineno-0-2497"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Invalid theme: </span><span class="si">{</span><span class="n">theme_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2498" name="__codelineno-0-2498"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Available themes: </span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">list_themes</span><span class="p">())</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2499" name="__codelineno-0-2499"></a>            <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2500" name="__codelineno-0-2500"></a>
+<a id="__codelineno-0-2501" name="__codelineno-0-2501"></a>        <span class="c1"># Update hud.yaml</span>
+<a id="__codelineno-0-2502" name="__codelineno-0-2502"></a>        <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-2503" name="__codelineno-0-2503"></a>            <span class="kn">import</span><span class="w"> </span><span class="nn">yaml</span>
+<a id="__codelineno-0-2504" name="__codelineno-0-2504"></a>            <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<a id="__codelineno-0-2505" name="__codelineno-0-2505"></a>
+<a id="__codelineno-0-2506" name="__codelineno-0-2506"></a>            <span class="n">hud_yaml</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">home</span><span class="p">()</span> <span class="o">/</span> <span class="s2">&quot;.config&quot;</span> <span class="o">/</span> <span class="s2">&quot;axium&quot;</span> <span class="o">/</span> <span class="s2">&quot;hud.yaml&quot;</span>
+<a id="__codelineno-0-2507" name="__codelineno-0-2507"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="n">hud_yaml</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+<a id="__codelineno-0-2508" name="__codelineno-0-2508"></a>                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hud.yaml not found - run &#39;axium bootstrap&#39; first&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2509" name="__codelineno-0-2509"></a>                <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2510" name="__codelineno-0-2510"></a>
+<a id="__codelineno-0-2511" name="__codelineno-0-2511"></a>            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hud_yaml</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-2512" name="__codelineno-0-2512"></a>                <span class="n">config</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<a id="__codelineno-0-2513" name="__codelineno-0-2513"></a>
+<a id="__codelineno-0-2514" name="__codelineno-0-2514"></a>            <span class="c1"># Update theme config</span>
+<a id="__codelineno-0-2515" name="__codelineno-0-2515"></a>            <span class="k">if</span> <span class="s2">&quot;style&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="p">:</span>
+<a id="__codelineno-0-2516" name="__codelineno-0-2516"></a>                <span class="n">config</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-2517" name="__codelineno-0-2517"></a>            <span class="k">if</span> <span class="s2">&quot;theme&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">]:</span>
+<a id="__codelineno-0-2518" name="__codelineno-0-2518"></a>                <span class="n">config</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">][</span><span class="s2">&quot;theme&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+<a id="__codelineno-0-2519" name="__codelineno-0-2519"></a>
+<a id="__codelineno-0-2520" name="__codelineno-0-2520"></a>            <span class="n">config</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">][</span><span class="s2">&quot;theme&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">theme_name</span>
+<a id="__codelineno-0-2521" name="__codelineno-0-2521"></a>            <span class="n">config</span><span class="p">[</span><span class="s2">&quot;style&quot;</span><span class="p">][</span><span class="s2">&quot;theme&quot;</span><span class="p">][</span><span class="s2">&quot;enabled&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Enable when setting</span>
+<a id="__codelineno-0-2522" name="__codelineno-0-2522"></a>
+<a id="__codelineno-0-2523" name="__codelineno-0-2523"></a>            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">hud_yaml</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<a id="__codelineno-0-2524" name="__codelineno-0-2524"></a>                <span class="n">yaml</span><span class="o">.</span><span class="n">safe_dump</span><span class="p">(</span><span class="n">config</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">default_flow_style</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-0-2525" name="__codelineno-0-2525"></a>
+<a id="__codelineno-0-2526" name="__codelineno-0-2526"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Theme set to &#39;</span><span class="si">{</span><span class="n">theme_name</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2527" name="__codelineno-0-2527"></a>
+<a id="__codelineno-0-2528" name="__codelineno-0-2528"></a>            <span class="c1"># Reload daemon to apply changes immediately</span>
+<a id="__codelineno-0-2529" name="__codelineno-0-2529"></a>            <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core.ipc</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_request_sync</span>
+<a id="__codelineno-0-2530" name="__codelineno-0-2530"></a>            <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-0-2531" name="__codelineno-0-2531"></a>                <span class="n">send_request_sync</span><span class="p">({</span><span class="s2">&quot;cmd&quot;</span><span class="p">:</span> <span class="s2">&quot;reload&quot;</span><span class="p">})</span>
+<a id="__codelineno-0-2532" name="__codelineno-0-2532"></a>            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<a id="__codelineno-0-2533" name="__codelineno-0-2533"></a>                <span class="k">pass</span>  <span class="c1"># Daemon may not be running, that&#39;s ok</span>
+<a id="__codelineno-0-2534" name="__codelineno-0-2534"></a>        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-0-2535" name="__codelineno-0-2535"></a>            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to update theme: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2536" name="__codelineno-0-2536"></a>            <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-0-2537" name="__codelineno-0-2537"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-2538" name="__codelineno-0-2538"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown action: </span><span class="si">{</span><span class="n">action</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2539" name="__codelineno-0-2539"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Valid actions: list, show, set &lt;name&gt;&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2540" name="__codelineno-0-2540"></a>        <span class="k">raise</span> <span class="n">typer</span><span class="o">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+            </details>
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
 <h3 id="axium.core.cli.palette_cmd" class="doc doc-heading">
 <code class="doc-symbol doc-symbol-heading doc-symbol-function"></code>            <code class="highlight language-python"><span class="n">palette_cmd</span><span class="p">(</span><span class="n">reload</span><span class="o">=</span><span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;--reload&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;Reload Spokes and refresh command list&#39;</span><span class="p">))</span></code>
 
@@ -8862,103 +9242,103 @@ press Enter after completion to return to palette.</p>
 
             <details class="quote">
               <summary>Source code in <code>axium/core/cli.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2414">2414</a></span>
-<span class="normal"><a href="#__codelineno-0-2415">2415</a></span>
-<span class="normal"><a href="#__codelineno-0-2416">2416</a></span>
-<span class="normal"><a href="#__codelineno-0-2417">2417</a></span>
-<span class="normal"><a href="#__codelineno-0-2418">2418</a></span>
-<span class="normal"><a href="#__codelineno-0-2419">2419</a></span>
-<span class="normal"><a href="#__codelineno-0-2420">2420</a></span>
-<span class="normal"><a href="#__codelineno-0-2421">2421</a></span>
-<span class="normal"><a href="#__codelineno-0-2422">2422</a></span>
-<span class="normal"><a href="#__codelineno-0-2423">2423</a></span>
-<span class="normal"><a href="#__codelineno-0-2424">2424</a></span>
-<span class="normal"><a href="#__codelineno-0-2425">2425</a></span>
-<span class="normal"><a href="#__codelineno-0-2426">2426</a></span>
-<span class="normal"><a href="#__codelineno-0-2427">2427</a></span>
-<span class="normal"><a href="#__codelineno-0-2428">2428</a></span>
-<span class="normal"><a href="#__codelineno-0-2429">2429</a></span>
-<span class="normal"><a href="#__codelineno-0-2430">2430</a></span>
-<span class="normal"><a href="#__codelineno-0-2431">2431</a></span>
-<span class="normal"><a href="#__codelineno-0-2432">2432</a></span>
-<span class="normal"><a href="#__codelineno-0-2433">2433</a></span>
-<span class="normal"><a href="#__codelineno-0-2434">2434</a></span>
-<span class="normal"><a href="#__codelineno-0-2435">2435</a></span>
-<span class="normal"><a href="#__codelineno-0-2436">2436</a></span>
-<span class="normal"><a href="#__codelineno-0-2437">2437</a></span>
-<span class="normal"><a href="#__codelineno-0-2438">2438</a></span>
-<span class="normal"><a href="#__codelineno-0-2439">2439</a></span>
-<span class="normal"><a href="#__codelineno-0-2440">2440</a></span>
-<span class="normal"><a href="#__codelineno-0-2441">2441</a></span>
-<span class="normal"><a href="#__codelineno-0-2442">2442</a></span>
-<span class="normal"><a href="#__codelineno-0-2443">2443</a></span>
-<span class="normal"><a href="#__codelineno-0-2444">2444</a></span>
-<span class="normal"><a href="#__codelineno-0-2445">2445</a></span>
-<span class="normal"><a href="#__codelineno-0-2446">2446</a></span>
-<span class="normal"><a href="#__codelineno-0-2447">2447</a></span>
-<span class="normal"><a href="#__codelineno-0-2448">2448</a></span>
-<span class="normal"><a href="#__codelineno-0-2449">2449</a></span>
-<span class="normal"><a href="#__codelineno-0-2450">2450</a></span>
-<span class="normal"><a href="#__codelineno-0-2451">2451</a></span>
-<span class="normal"><a href="#__codelineno-0-2452">2452</a></span>
-<span class="normal"><a href="#__codelineno-0-2453">2453</a></span>
-<span class="normal"><a href="#__codelineno-0-2454">2454</a></span>
-<span class="normal"><a href="#__codelineno-0-2455">2455</a></span>
-<span class="normal"><a href="#__codelineno-0-2456">2456</a></span>
-<span class="normal"><a href="#__codelineno-0-2457">2457</a></span>
-<span class="normal"><a href="#__codelineno-0-2458">2458</a></span>
-<span class="normal"><a href="#__codelineno-0-2459">2459</a></span>
-<span class="normal"><a href="#__codelineno-0-2460">2460</a></span>
-<span class="normal"><a href="#__codelineno-0-2461">2461</a></span>
-<span class="normal"><a href="#__codelineno-0-2462">2462</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2414" name="__codelineno-0-2414"></a><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;palette&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-2415" name="__codelineno-0-2415"></a><span class="k">def</span><span class="w"> </span><span class="nf">palette_cmd</span><span class="p">(</span>
-<a id="__codelineno-0-2416" name="__codelineno-0-2416"></a>    <span class="n">reload</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span>
-<a id="__codelineno-0-2417" name="__codelineno-0-2417"></a>        <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;--reload&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Reload Spokes and refresh command list&quot;</span>
-<a id="__codelineno-0-2418" name="__codelineno-0-2418"></a>    <span class="p">)</span>
-<a id="__codelineno-0-2419" name="__codelineno-0-2419"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-2420" name="__codelineno-0-2420"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-2421" name="__codelineno-0-2421"></a><span class="sd">    Launch the interactive palette TUI.</span>
-<a id="__codelineno-0-2422" name="__codelineno-0-2422"></a>
-<a id="__codelineno-0-2423" name="__codelineno-0-2423"></a><span class="sd">    Opens a curses-based menu for quick access to all Axium commands (core and Spokes).</span>
-<a id="__codelineno-0-2424" name="__codelineno-0-2424"></a><span class="sd">    Commands are discovered dynamically from the command registry.</span>
-<a id="__codelineno-0-2425" name="__codelineno-0-2425"></a><span class="sd">    Navigate with arrow keys or j/k, select with Enter, quit with q/Esc.</span>
-<a id="__codelineno-0-2426" name="__codelineno-0-2426"></a>
-<a id="__codelineno-0-2427" name="__codelineno-0-2427"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-2428" name="__codelineno-0-2428"></a><span class="sd">        reload: Force reload of Spokes and refresh command registry</span>
-<a id="__codelineno-0-2429" name="__codelineno-0-2429"></a>
-<a id="__codelineno-0-2430" name="__codelineno-0-2430"></a><span class="sd">    Example:</span>
-<a id="__codelineno-0-2431" name="__codelineno-0-2431"></a><span class="sd">        ```bash</span>
-<a id="__codelineno-0-2432" name="__codelineno-0-2432"></a><span class="sd">        $ axium palette</span>
-<a id="__codelineno-0-2433" name="__codelineno-0-2433"></a><span class="sd">        [Opens interactive menu with all available commands]</span>
-<a id="__codelineno-0-2434" name="__codelineno-0-2434"></a>
-<a id="__codelineno-0-2435" name="__codelineno-0-2435"></a><span class="sd">        $ axium palette --reload</span>
-<a id="__codelineno-0-2436" name="__codelineno-0-2436"></a><span class="sd">        [Reloads Spokes and opens menu with refreshed command list]</span>
-<a id="__codelineno-0-2437" name="__codelineno-0-2437"></a><span class="sd">        ```</span>
-<a id="__codelineno-0-2438" name="__codelineno-0-2438"></a>
-<a id="__codelineno-0-2439" name="__codelineno-0-2439"></a><span class="sd">    Key Bindings:</span>
-<a id="__codelineno-0-2440" name="__codelineno-0-2440"></a><span class="sd">        ```</span>
-<a id="__codelineno-0-2441" name="__codelineno-0-2441"></a><span class="sd">        ↑/k: Move up</span>
-<a id="__codelineno-0-2442" name="__codelineno-0-2442"></a><span class="sd">        ↓/j: Move down</span>
-<a id="__codelineno-0-2443" name="__codelineno-0-2443"></a><span class="sd">        Enter: Execute selected command</span>
-<a id="__codelineno-0-2444" name="__codelineno-0-2444"></a><span class="sd">        q/Esc: Quit</span>
-<a id="__codelineno-0-2445" name="__codelineno-0-2445"></a><span class="sd">        ```</span>
-<a id="__codelineno-0-2446" name="__codelineno-0-2446"></a>
-<a id="__codelineno-0-2447" name="__codelineno-0-2447"></a><span class="sd">    Note:</span>
-<a id="__codelineno-0-2448" name="__codelineno-0-2448"></a><span class="sd">        Requires terminal with curses support. Commands execute in foreground,</span>
-<a id="__codelineno-0-2449" name="__codelineno-0-2449"></a><span class="sd">        press Enter after completion to return to palette.</span>
-<a id="__codelineno-0-2450" name="__codelineno-0-2450"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-2451" name="__codelineno-0-2451"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">curses</span>
-<a id="__codelineno-0-2452" name="__codelineno-0-2452"></a>
-<a id="__codelineno-0-2453" name="__codelineno-0-2453"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">palette</span> <span class="k">as</span> <span class="n">pal</span>
-<a id="__codelineno-0-2454" name="__codelineno-0-2454"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
-<a id="__codelineno-0-2455" name="__codelineno-0-2455"></a>
-<a id="__codelineno-0-2456" name="__codelineno-0-2456"></a>    <span class="k">if</span> <span class="n">reload</span><span class="p">:</span>
-<a id="__codelineno-0-2457" name="__codelineno-0-2457"></a>        <span class="c1"># Clear registry and reload spokes</span>
-<a id="__codelineno-0-2458" name="__codelineno-0-2458"></a>        <span class="n">registry</span><span class="o">.</span><span class="n">clear_registry</span><span class="p">()</span>
-<a id="__codelineno-0-2459" name="__codelineno-0-2459"></a>        <span class="n">load_spokes</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a id="__codelineno-0-2460" name="__codelineno-0-2460"></a>        <span class="n">registry</span><span class="o">.</span><span class="n">introspect_typer_app</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-2461" name="__codelineno-0-2461"></a>
-<a id="__codelineno-0-2462" name="__codelineno-0-2462"></a>    <span class="n">curses</span><span class="o">.</span><span class="n">wrapper</span><span class="p">(</span><span class="n">pal</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2543">2543</a></span>
+<span class="normal"><a href="#__codelineno-0-2544">2544</a></span>
+<span class="normal"><a href="#__codelineno-0-2545">2545</a></span>
+<span class="normal"><a href="#__codelineno-0-2546">2546</a></span>
+<span class="normal"><a href="#__codelineno-0-2547">2547</a></span>
+<span class="normal"><a href="#__codelineno-0-2548">2548</a></span>
+<span class="normal"><a href="#__codelineno-0-2549">2549</a></span>
+<span class="normal"><a href="#__codelineno-0-2550">2550</a></span>
+<span class="normal"><a href="#__codelineno-0-2551">2551</a></span>
+<span class="normal"><a href="#__codelineno-0-2552">2552</a></span>
+<span class="normal"><a href="#__codelineno-0-2553">2553</a></span>
+<span class="normal"><a href="#__codelineno-0-2554">2554</a></span>
+<span class="normal"><a href="#__codelineno-0-2555">2555</a></span>
+<span class="normal"><a href="#__codelineno-0-2556">2556</a></span>
+<span class="normal"><a href="#__codelineno-0-2557">2557</a></span>
+<span class="normal"><a href="#__codelineno-0-2558">2558</a></span>
+<span class="normal"><a href="#__codelineno-0-2559">2559</a></span>
+<span class="normal"><a href="#__codelineno-0-2560">2560</a></span>
+<span class="normal"><a href="#__codelineno-0-2561">2561</a></span>
+<span class="normal"><a href="#__codelineno-0-2562">2562</a></span>
+<span class="normal"><a href="#__codelineno-0-2563">2563</a></span>
+<span class="normal"><a href="#__codelineno-0-2564">2564</a></span>
+<span class="normal"><a href="#__codelineno-0-2565">2565</a></span>
+<span class="normal"><a href="#__codelineno-0-2566">2566</a></span>
+<span class="normal"><a href="#__codelineno-0-2567">2567</a></span>
+<span class="normal"><a href="#__codelineno-0-2568">2568</a></span>
+<span class="normal"><a href="#__codelineno-0-2569">2569</a></span>
+<span class="normal"><a href="#__codelineno-0-2570">2570</a></span>
+<span class="normal"><a href="#__codelineno-0-2571">2571</a></span>
+<span class="normal"><a href="#__codelineno-0-2572">2572</a></span>
+<span class="normal"><a href="#__codelineno-0-2573">2573</a></span>
+<span class="normal"><a href="#__codelineno-0-2574">2574</a></span>
+<span class="normal"><a href="#__codelineno-0-2575">2575</a></span>
+<span class="normal"><a href="#__codelineno-0-2576">2576</a></span>
+<span class="normal"><a href="#__codelineno-0-2577">2577</a></span>
+<span class="normal"><a href="#__codelineno-0-2578">2578</a></span>
+<span class="normal"><a href="#__codelineno-0-2579">2579</a></span>
+<span class="normal"><a href="#__codelineno-0-2580">2580</a></span>
+<span class="normal"><a href="#__codelineno-0-2581">2581</a></span>
+<span class="normal"><a href="#__codelineno-0-2582">2582</a></span>
+<span class="normal"><a href="#__codelineno-0-2583">2583</a></span>
+<span class="normal"><a href="#__codelineno-0-2584">2584</a></span>
+<span class="normal"><a href="#__codelineno-0-2585">2585</a></span>
+<span class="normal"><a href="#__codelineno-0-2586">2586</a></span>
+<span class="normal"><a href="#__codelineno-0-2587">2587</a></span>
+<span class="normal"><a href="#__codelineno-0-2588">2588</a></span>
+<span class="normal"><a href="#__codelineno-0-2589">2589</a></span>
+<span class="normal"><a href="#__codelineno-0-2590">2590</a></span>
+<span class="normal"><a href="#__codelineno-0-2591">2591</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2543" name="__codelineno-0-2543"></a><span class="nd">@app</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&quot;palette&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2544" name="__codelineno-0-2544"></a><span class="k">def</span><span class="w"> </span><span class="nf">palette_cmd</span><span class="p">(</span>
+<a id="__codelineno-0-2545" name="__codelineno-0-2545"></a>    <span class="n">reload</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">typer</span><span class="o">.</span><span class="n">Option</span><span class="p">(</span>
+<a id="__codelineno-0-2546" name="__codelineno-0-2546"></a>        <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;--reload&quot;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Reload Spokes and refresh command list&quot;</span>
+<a id="__codelineno-0-2547" name="__codelineno-0-2547"></a>    <span class="p">)</span>
+<a id="__codelineno-0-2548" name="__codelineno-0-2548"></a><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-2549" name="__codelineno-0-2549"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-2550" name="__codelineno-0-2550"></a><span class="sd">    Launch the interactive palette TUI.</span>
+<a id="__codelineno-0-2551" name="__codelineno-0-2551"></a>
+<a id="__codelineno-0-2552" name="__codelineno-0-2552"></a><span class="sd">    Opens a curses-based menu for quick access to all Axium commands (core and Spokes).</span>
+<a id="__codelineno-0-2553" name="__codelineno-0-2553"></a><span class="sd">    Commands are discovered dynamically from the command registry.</span>
+<a id="__codelineno-0-2554" name="__codelineno-0-2554"></a><span class="sd">    Navigate with arrow keys or j/k, select with Enter, quit with q/Esc.</span>
+<a id="__codelineno-0-2555" name="__codelineno-0-2555"></a>
+<a id="__codelineno-0-2556" name="__codelineno-0-2556"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-2557" name="__codelineno-0-2557"></a><span class="sd">        reload: Force reload of Spokes and refresh command registry</span>
+<a id="__codelineno-0-2558" name="__codelineno-0-2558"></a>
+<a id="__codelineno-0-2559" name="__codelineno-0-2559"></a><span class="sd">    Example:</span>
+<a id="__codelineno-0-2560" name="__codelineno-0-2560"></a><span class="sd">        ```bash</span>
+<a id="__codelineno-0-2561" name="__codelineno-0-2561"></a><span class="sd">        $ axium palette</span>
+<a id="__codelineno-0-2562" name="__codelineno-0-2562"></a><span class="sd">        [Opens interactive menu with all available commands]</span>
+<a id="__codelineno-0-2563" name="__codelineno-0-2563"></a>
+<a id="__codelineno-0-2564" name="__codelineno-0-2564"></a><span class="sd">        $ axium palette --reload</span>
+<a id="__codelineno-0-2565" name="__codelineno-0-2565"></a><span class="sd">        [Reloads Spokes and opens menu with refreshed command list]</span>
+<a id="__codelineno-0-2566" name="__codelineno-0-2566"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-2567" name="__codelineno-0-2567"></a>
+<a id="__codelineno-0-2568" name="__codelineno-0-2568"></a><span class="sd">    Key Bindings:</span>
+<a id="__codelineno-0-2569" name="__codelineno-0-2569"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-2570" name="__codelineno-0-2570"></a><span class="sd">        ↑/k: Move up</span>
+<a id="__codelineno-0-2571" name="__codelineno-0-2571"></a><span class="sd">        ↓/j: Move down</span>
+<a id="__codelineno-0-2572" name="__codelineno-0-2572"></a><span class="sd">        Enter: Execute selected command</span>
+<a id="__codelineno-0-2573" name="__codelineno-0-2573"></a><span class="sd">        q/Esc: Quit</span>
+<a id="__codelineno-0-2574" name="__codelineno-0-2574"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-2575" name="__codelineno-0-2575"></a>
+<a id="__codelineno-0-2576" name="__codelineno-0-2576"></a><span class="sd">    Note:</span>
+<a id="__codelineno-0-2577" name="__codelineno-0-2577"></a><span class="sd">        Requires terminal with curses support. Commands execute in foreground,</span>
+<a id="__codelineno-0-2578" name="__codelineno-0-2578"></a><span class="sd">        press Enter after completion to return to palette.</span>
+<a id="__codelineno-0-2579" name="__codelineno-0-2579"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-2580" name="__codelineno-0-2580"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">curses</span>
+<a id="__codelineno-0-2581" name="__codelineno-0-2581"></a>
+<a id="__codelineno-0-2582" name="__codelineno-0-2582"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">palette</span> <span class="k">as</span> <span class="n">pal</span>
+<a id="__codelineno-0-2583" name="__codelineno-0-2583"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">axium.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">registry</span>
+<a id="__codelineno-0-2584" name="__codelineno-0-2584"></a>
+<a id="__codelineno-0-2585" name="__codelineno-0-2585"></a>    <span class="k">if</span> <span class="n">reload</span><span class="p">:</span>
+<a id="__codelineno-0-2586" name="__codelineno-0-2586"></a>        <span class="c1"># Clear registry and reload spokes</span>
+<a id="__codelineno-0-2587" name="__codelineno-0-2587"></a>        <span class="n">registry</span><span class="o">.</span><span class="n">clear_registry</span><span class="p">()</span>
+<a id="__codelineno-0-2588" name="__codelineno-0-2588"></a>        <span class="n">load_spokes</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-0-2589" name="__codelineno-0-2589"></a>        <span class="n">registry</span><span class="o">.</span><span class="n">introspect_typer_app</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;core&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-2590" name="__codelineno-0-2590"></a>
+<a id="__codelineno-0-2591" name="__codelineno-0-2591"></a>    <span class="n">curses</span><span class="o">.</span><span class="n">wrapper</span><span class="p">(</span><span class="n">pal</span><span class="o">.</span><span class="n">main</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -8983,45 +9363,45 @@ Initializes Typer app and processes commands.</p>
 
             <details class="quote">
               <summary>Source code in <code>axium/core/cli.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2465">2465</a></span>
-<span class="normal"><a href="#__codelineno-0-2466">2466</a></span>
-<span class="normal"><a href="#__codelineno-0-2467">2467</a></span>
-<span class="normal"><a href="#__codelineno-0-2468">2468</a></span>
-<span class="normal"><a href="#__codelineno-0-2469">2469</a></span>
-<span class="normal"><a href="#__codelineno-0-2470">2470</a></span>
-<span class="normal"><a href="#__codelineno-0-2471">2471</a></span>
-<span class="normal"><a href="#__codelineno-0-2472">2472</a></span>
-<span class="normal"><a href="#__codelineno-0-2473">2473</a></span>
-<span class="normal"><a href="#__codelineno-0-2474">2474</a></span>
-<span class="normal"><a href="#__codelineno-0-2475">2475</a></span>
-<span class="normal"><a href="#__codelineno-0-2476">2476</a></span>
-<span class="normal"><a href="#__codelineno-0-2477">2477</a></span>
-<span class="normal"><a href="#__codelineno-0-2478">2478</a></span>
-<span class="normal"><a href="#__codelineno-0-2479">2479</a></span>
-<span class="normal"><a href="#__codelineno-0-2480">2480</a></span>
-<span class="normal"><a href="#__codelineno-0-2481">2481</a></span>
-<span class="normal"><a href="#__codelineno-0-2482">2482</a></span>
-<span class="normal"><a href="#__codelineno-0-2483">2483</a></span>
-<span class="normal"><a href="#__codelineno-0-2484">2484</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2465" name="__codelineno-0-2465"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-2466" name="__codelineno-0-2466"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-2467" name="__codelineno-0-2467"></a><span class="sd">    CLI entrypoint.</span>
-<a id="__codelineno-0-2468" name="__codelineno-0-2468"></a>
-<a id="__codelineno-0-2469" name="__codelineno-0-2469"></a><span class="sd">    Called when axium is invoked from the command line (via setup.py entry point).</span>
-<a id="__codelineno-0-2470" name="__codelineno-0-2470"></a><span class="sd">    Initializes Typer app and processes commands.</span>
-<a id="__codelineno-0-2471" name="__codelineno-0-2471"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-2472" name="__codelineno-0-2472"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-0-2473" name="__codelineno-0-2473"></a>
-<a id="__codelineno-0-2474" name="__codelineno-0-2474"></a>    <span class="c1"># Intercept Typer&#39;s legacy completion flags for backward compatibility</span>
-<a id="__codelineno-0-2475" name="__codelineno-0-2475"></a>    <span class="c1"># Redirect users to new `axium completions install` system</span>
-<a id="__codelineno-0-2476" name="__codelineno-0-2476"></a>    <span class="k">if</span> <span class="s2">&quot;--install-completion&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="ow">or</span> <span class="s2">&quot;--show-completion&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
-<a id="__codelineno-0-2477" name="__codelineno-0-2477"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;axium&quot;</span><span class="p">,</span> <span class="s2">&quot;completions&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-2478" name="__codelineno-0-2478"></a>
-<a id="__codelineno-0-2479" name="__codelineno-0-2479"></a>    <span class="c1"># Load spokes before dispatching command</span>
-<a id="__codelineno-0-2480" name="__codelineno-0-2480"></a>    <span class="c1"># This must happen here (not in callback) so Typer can find spoke commands</span>
-<a id="__codelineno-0-2481" name="__codelineno-0-2481"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">_autoload_done</span><span class="p">:</span>
-<a id="__codelineno-0-2482" name="__codelineno-0-2482"></a>        <span class="n">_autoload</span><span class="p">()</span>
-<a id="__codelineno-0-2483" name="__codelineno-0-2483"></a>
-<a id="__codelineno-0-2484" name="__codelineno-0-2484"></a>    <span class="n">app</span><span class="p">()</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-2594">2594</a></span>
+<span class="normal"><a href="#__codelineno-0-2595">2595</a></span>
+<span class="normal"><a href="#__codelineno-0-2596">2596</a></span>
+<span class="normal"><a href="#__codelineno-0-2597">2597</a></span>
+<span class="normal"><a href="#__codelineno-0-2598">2598</a></span>
+<span class="normal"><a href="#__codelineno-0-2599">2599</a></span>
+<span class="normal"><a href="#__codelineno-0-2600">2600</a></span>
+<span class="normal"><a href="#__codelineno-0-2601">2601</a></span>
+<span class="normal"><a href="#__codelineno-0-2602">2602</a></span>
+<span class="normal"><a href="#__codelineno-0-2603">2603</a></span>
+<span class="normal"><a href="#__codelineno-0-2604">2604</a></span>
+<span class="normal"><a href="#__codelineno-0-2605">2605</a></span>
+<span class="normal"><a href="#__codelineno-0-2606">2606</a></span>
+<span class="normal"><a href="#__codelineno-0-2607">2607</a></span>
+<span class="normal"><a href="#__codelineno-0-2608">2608</a></span>
+<span class="normal"><a href="#__codelineno-0-2609">2609</a></span>
+<span class="normal"><a href="#__codelineno-0-2610">2610</a></span>
+<span class="normal"><a href="#__codelineno-0-2611">2611</a></span>
+<span class="normal"><a href="#__codelineno-0-2612">2612</a></span>
+<span class="normal"><a href="#__codelineno-0-2613">2613</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-2594" name="__codelineno-0-2594"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-2595" name="__codelineno-0-2595"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-2596" name="__codelineno-0-2596"></a><span class="sd">    CLI entrypoint.</span>
+<a id="__codelineno-0-2597" name="__codelineno-0-2597"></a>
+<a id="__codelineno-0-2598" name="__codelineno-0-2598"></a><span class="sd">    Called when axium is invoked from the command line (via setup.py entry point).</span>
+<a id="__codelineno-0-2599" name="__codelineno-0-2599"></a><span class="sd">    Initializes Typer app and processes commands.</span>
+<a id="__codelineno-0-2600" name="__codelineno-0-2600"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-2601" name="__codelineno-0-2601"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<a id="__codelineno-0-2602" name="__codelineno-0-2602"></a>
+<a id="__codelineno-0-2603" name="__codelineno-0-2603"></a>    <span class="c1"># Intercept Typer&#39;s legacy completion flags for backward compatibility</span>
+<a id="__codelineno-0-2604" name="__codelineno-0-2604"></a>    <span class="c1"># Redirect users to new `axium completions install` system</span>
+<a id="__codelineno-0-2605" name="__codelineno-0-2605"></a>    <span class="k">if</span> <span class="s2">&quot;--install-completion&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="ow">or</span> <span class="s2">&quot;--show-completion&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">:</span>
+<a id="__codelineno-0-2606" name="__codelineno-0-2606"></a>        <span class="n">sys</span><span class="o">.</span><span class="n">argv</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;axium&quot;</span><span class="p">,</span> <span class="s2">&quot;completions&quot;</span><span class="p">,</span> <span class="s2">&quot;install&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-2607" name="__codelineno-0-2607"></a>
+<a id="__codelineno-0-2608" name="__codelineno-0-2608"></a>    <span class="c1"># Load spokes before dispatching command</span>
+<a id="__codelineno-0-2609" name="__codelineno-0-2609"></a>    <span class="c1"># This must happen here (not in callback) so Typer can find spoke commands</span>
+<a id="__codelineno-0-2610" name="__codelineno-0-2610"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">_autoload_done</span><span class="p">:</span>
+<a id="__codelineno-0-2611" name="__codelineno-0-2611"></a>        <span class="n">_autoload</span><span class="p">()</span>
+<a id="__codelineno-0-2612" name="__codelineno-0-2612"></a>
+<a id="__codelineno-0-2613" name="__codelineno-0-2613"></a>    <span class="n">app</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
