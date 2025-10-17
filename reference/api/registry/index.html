@@ -2353,11 +2353,7 @@ output clean for display purposes.</p>
 <span class="normal"><a href="#__codelineno-0-209">209</a></span>
 <span class="normal"><a href="#__codelineno-0-210">210</a></span>
 <span class="normal"><a href="#__codelineno-0-211">211</a></span>
-<span class="normal"><a href="#__codelineno-0-212">212</a></span>
-<span class="normal"><a href="#__codelineno-0-213">213</a></span>
-<span class="normal"><a href="#__codelineno-0-214">214</a></span>
-<span class="normal"><a href="#__codelineno-0-215">215</a></span>
-<span class="normal"><a href="#__codelineno-0-216">216</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-196" name="__codelineno-0-196"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_commands_by_source</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+<span class="normal"><a href="#__codelineno-0-212">212</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-196" name="__codelineno-0-196"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_commands_by_source</span><span class="p">(</span><span class="n">source</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
 <a id="__codelineno-0-197" name="__codelineno-0-197"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <a id="__codelineno-0-198" name="__codelineno-0-198"></a><span class="sd">    Get commands filtered by source.</span>
 <a id="__codelineno-0-199" name="__codelineno-0-199"></a>
@@ -2373,11 +2369,7 @@ output clean for display purposes.</p>
 <a id="__codelineno-0-209" name="__codelineno-0-209"></a><span class="sd">        &gt;&gt;&gt; aws_commands = get_commands_by_source(&quot;aws&quot;)</span>
 <a id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="sd">        ```</span>
 <a id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-212" name="__codelineno-0-212"></a>    <span class="k">return</span> <span class="p">[</span>
-<a id="__codelineno-0-213" name="__codelineno-0-213"></a>        <span class="n">cmd</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
-<a id="__codelineno-0-214" name="__codelineno-0-214"></a>        <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">COMMAND_REGISTRY</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
-<a id="__codelineno-0-215" name="__codelineno-0-215"></a>        <span class="k">if</span> <span class="n">cmd</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="n">source</span>
-<a id="__codelineno-0-216" name="__codelineno-0-216"></a>    <span class="p">]</span>
+<a id="__codelineno-0-212" name="__codelineno-0-212"></a>    <span class="k">return</span> <span class="p">[</span><span class="n">cmd</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span> <span class="k">for</span> <span class="n">cmd</span> <span class="ow">in</span> <span class="n">COMMAND_REGISTRY</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="k">if</span> <span class="n">cmd</span><span class="o">.</span><span class="n">source</span> <span class="o">==</span> <span class="n">source</span><span class="p">]</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2409,7 +2401,11 @@ output clean for display purposes.</p>
 
             <details class="quote">
               <summary>Source code in <code>axium/core/registry.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-219">219</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-215">215</a></span>
+<span class="normal"><a href="#__codelineno-0-216">216</a></span>
+<span class="normal"><a href="#__codelineno-0-217">217</a></span>
+<span class="normal"><a href="#__codelineno-0-218">218</a></span>
+<span class="normal"><a href="#__codelineno-0-219">219</a></span>
 <span class="normal"><a href="#__codelineno-0-220">220</a></span>
 <span class="normal"><a href="#__codelineno-0-221">221</a></span>
 <span class="normal"><a href="#__codelineno-0-222">222</a></span>
@@ -2419,25 +2415,21 @@ output clean for display purposes.</p>
 <span class="normal"><a href="#__codelineno-0-226">226</a></span>
 <span class="normal"><a href="#__codelineno-0-227">227</a></span>
 <span class="normal"><a href="#__codelineno-0-228">228</a></span>
-<span class="normal"><a href="#__codelineno-0-229">229</a></span>
-<span class="normal"><a href="#__codelineno-0-230">230</a></span>
-<span class="normal"><a href="#__codelineno-0-231">231</a></span>
-<span class="normal"><a href="#__codelineno-0-232">232</a></span>
-<span class="normal"><a href="#__codelineno-0-233">233</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="k">def</span><span class="w"> </span><span class="nf">clear_registry</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="sd">    Clear all registered commands.</span>
-<a id="__codelineno-0-222" name="__codelineno-0-222"></a>
-<a id="__codelineno-0-223" name="__codelineno-0-223"></a><span class="sd">    Used for testing and when reloading spokes with --reload flag.</span>
-<a id="__codelineno-0-224" name="__codelineno-0-224"></a>
-<a id="__codelineno-0-225" name="__codelineno-0-225"></a><span class="sd">    Example:</span>
-<a id="__codelineno-0-226" name="__codelineno-0-226"></a><span class="sd">        ```python</span>
-<a id="__codelineno-0-227" name="__codelineno-0-227"></a><span class="sd">        &gt;&gt;&gt; clear_registry()</span>
-<a id="__codelineno-0-228" name="__codelineno-0-228"></a><span class="sd">        &gt;&gt;&gt; len(get_all_commands())</span>
-<a id="__codelineno-0-229" name="__codelineno-0-229"></a><span class="sd">        0</span>
-<a id="__codelineno-0-230" name="__codelineno-0-230"></a><span class="sd">        ```</span>
-<a id="__codelineno-0-231" name="__codelineno-0-231"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-232" name="__codelineno-0-232"></a>    <span class="n">COMMAND_REGISTRY</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-<a id="__codelineno-0-233" name="__codelineno-0-233"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Registry cleared&quot;</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-229">229</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-215" name="__codelineno-0-215"></a><span class="k">def</span><span class="w"> </span><span class="nf">clear_registry</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-216" name="__codelineno-0-216"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-217" name="__codelineno-0-217"></a><span class="sd">    Clear all registered commands.</span>
+<a id="__codelineno-0-218" name="__codelineno-0-218"></a>
+<a id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="sd">    Used for testing and when reloading spokes with --reload flag.</span>
+<a id="__codelineno-0-220" name="__codelineno-0-220"></a>
+<a id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="sd">    Example:</span>
+<a id="__codelineno-0-222" name="__codelineno-0-222"></a><span class="sd">        ```python</span>
+<a id="__codelineno-0-223" name="__codelineno-0-223"></a><span class="sd">        &gt;&gt;&gt; clear_registry()</span>
+<a id="__codelineno-0-224" name="__codelineno-0-224"></a><span class="sd">        &gt;&gt;&gt; len(get_all_commands())</span>
+<a id="__codelineno-0-225" name="__codelineno-0-225"></a><span class="sd">        0</span>
+<a id="__codelineno-0-226" name="__codelineno-0-226"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-227" name="__codelineno-0-227"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-228" name="__codelineno-0-228"></a>    <span class="n">COMMAND_REGISTRY</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<a id="__codelineno-0-229" name="__codelineno-0-229"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Registry cleared&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>
@@ -2551,7 +2543,11 @@ help text, and source tags.</p>
 
             <details class="quote">
               <summary>Source code in <code>axium/core/registry.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-236">236</a></span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-232">232</a></span>
+<span class="normal"><a href="#__codelineno-0-233">233</a></span>
+<span class="normal"><a href="#__codelineno-0-234">234</a></span>
+<span class="normal"><a href="#__codelineno-0-235">235</a></span>
+<span class="normal"><a href="#__codelineno-0-236">236</a></span>
 <span class="normal"><a href="#__codelineno-0-237">237</a></span>
 <span class="normal"><a href="#__codelineno-0-238">238</a></span>
 <span class="normal"><a href="#__codelineno-0-239">239</a></span>
@@ -2645,109 +2641,105 @@ help text, and source tags.</p>
 <span class="normal"><a href="#__codelineno-0-327">327</a></span>
 <span class="normal"><a href="#__codelineno-0-328">328</a></span>
 <span class="normal"><a href="#__codelineno-0-329">329</a></span>
-<span class="normal"><a href="#__codelineno-0-330">330</a></span>
-<span class="normal"><a href="#__codelineno-0-331">331</a></span>
-<span class="normal"><a href="#__codelineno-0-332">332</a></span>
-<span class="normal"><a href="#__codelineno-0-333">333</a></span>
-<span class="normal"><a href="#__codelineno-0-334">334</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-236" name="__codelineno-0-236"></a><span class="k">def</span><span class="w"> </span><span class="nf">introspect_typer_app</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-0-237" name="__codelineno-0-237"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<a id="__codelineno-0-238" name="__codelineno-0-238"></a><span class="sd">    Walk Typer app structure and register all commands.</span>
+<span class="normal"><a href="#__codelineno-0-330">330</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-232" name="__codelineno-0-232"></a><span class="k">def</span><span class="w"> </span><span class="nf">introspect_typer_app</span><span class="p">(</span><span class="n">app</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">source</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;core&quot;</span><span class="p">,</span> <span class="n">prefix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-0-233" name="__codelineno-0-233"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<a id="__codelineno-0-234" name="__codelineno-0-234"></a><span class="sd">    Walk Typer app structure and register all commands.</span>
+<a id="__codelineno-0-235" name="__codelineno-0-235"></a>
+<a id="__codelineno-0-236" name="__codelineno-0-236"></a><span class="sd">    Recursively discovers commands by examining app.registered_commands</span>
+<a id="__codelineno-0-237" name="__codelineno-0-237"></a><span class="sd">    and app.registered_groups. Captures command metadata including names,</span>
+<a id="__codelineno-0-238" name="__codelineno-0-238"></a><span class="sd">    help text, and source tags.</span>
 <a id="__codelineno-0-239" name="__codelineno-0-239"></a>
-<a id="__codelineno-0-240" name="__codelineno-0-240"></a><span class="sd">    Recursively discovers commands by examining app.registered_commands</span>
-<a id="__codelineno-0-241" name="__codelineno-0-241"></a><span class="sd">    and app.registered_groups. Captures command metadata including names,</span>
-<a id="__codelineno-0-242" name="__codelineno-0-242"></a><span class="sd">    help text, and source tags.</span>
-<a id="__codelineno-0-243" name="__codelineno-0-243"></a>
-<a id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="sd">    Args:</span>
-<a id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="sd">        app: Typer application instance to introspect</span>
-<a id="__codelineno-0-246" name="__codelineno-0-246"></a><span class="sd">        source: Source tag for commands (&quot;core&quot; or spoke name)</span>
-<a id="__codelineno-0-247" name="__codelineno-0-247"></a><span class="sd">        prefix: Command prefix for nested groups (used internally for recursion)</span>
-<a id="__codelineno-0-248" name="__codelineno-0-248"></a>
-<a id="__codelineno-0-249" name="__codelineno-0-249"></a><span class="sd">    Example:</span>
-<a id="__codelineno-0-250" name="__codelineno-0-250"></a><span class="sd">        ```python</span>
-<a id="__codelineno-0-251" name="__codelineno-0-251"></a><span class="sd">        &gt;&gt;&gt; from typer import Typer</span>
-<a id="__codelineno-0-252" name="__codelineno-0-252"></a><span class="sd">        &gt;&gt;&gt; app = Typer()</span>
-<a id="__codelineno-0-253" name="__codelineno-0-253"></a><span class="sd">        &gt;&gt;&gt; @app.command()</span>
-<a id="__codelineno-0-254" name="__codelineno-0-254"></a><span class="sd">        ... def test():</span>
-<a id="__codelineno-0-255" name="__codelineno-0-255"></a><span class="sd">        ...     &#39;&#39;&#39;Test command&#39;&#39;&#39;</span>
-<a id="__codelineno-0-256" name="__codelineno-0-256"></a><span class="sd">        ...     pass</span>
-<a id="__codelineno-0-257" name="__codelineno-0-257"></a><span class="sd">        &gt;&gt;&gt; introspect_typer_app(app, source=&quot;core&quot;)</span>
-<a id="__codelineno-0-258" name="__codelineno-0-258"></a><span class="sd">        &gt;&gt;&gt; commands = get_all_commands()</span>
-<a id="__codelineno-0-259" name="__codelineno-0-259"></a><span class="sd">        &gt;&gt;&gt; print(commands[0][&#39;name&#39;])</span>
-<a id="__codelineno-0-260" name="__codelineno-0-260"></a><span class="sd">        test</span>
-<a id="__codelineno-0-261" name="__codelineno-0-261"></a><span class="sd">        ```</span>
-<a id="__codelineno-0-262" name="__codelineno-0-262"></a>
-<a id="__codelineno-0-263" name="__codelineno-0-263"></a><span class="sd">    Note:</span>
-<a id="__codelineno-0-264" name="__codelineno-0-264"></a><span class="sd">        - Handles both root commands and nested subgroups</span>
-<a id="__codelineno-0-265" name="__codelineno-0-265"></a><span class="sd">        - Extracts help text from command docstrings if not explicitly set</span>
-<a id="__codelineno-0-266" name="__codelineno-0-266"></a><span class="sd">        - Called after load_spokes() to capture all registered commands</span>
-<a id="__codelineno-0-267" name="__codelineno-0-267"></a><span class="sd">        - Safe to call multiple times (will overwrite existing entries)</span>
-<a id="__codelineno-0-268" name="__codelineno-0-268"></a><span class="sd">    &quot;&quot;&quot;</span>
-<a id="__codelineno-0-269" name="__codelineno-0-269"></a>    <span class="c1"># Register direct commands at this level</span>
-<a id="__codelineno-0-270" name="__codelineno-0-270"></a>    <span class="k">for</span> <span class="n">cmd_info</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">registered_commands</span><span class="p">:</span>
-<a id="__codelineno-0-271" name="__codelineno-0-271"></a>        <span class="c1"># Use explicit name or fall back to function name</span>
-<a id="__codelineno-0-272" name="__codelineno-0-272"></a>        <span class="n">cmd_name</span> <span class="o">=</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="vm">__name__</span>
-<a id="__codelineno-0-273" name="__codelineno-0-273"></a>        <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">cmd_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<a id="__codelineno-0-274" name="__codelineno-0-274"></a>
-<a id="__codelineno-0-275" name="__codelineno-0-275"></a>        <span class="c1"># Extract help text and full docstring</span>
-<a id="__codelineno-0-276" name="__codelineno-0-276"></a>        <span class="n">help_text</span> <span class="o">=</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">help</span>
-<a id="__codelineno-0-277" name="__codelineno-0-277"></a>        <span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-0-278" name="__codelineno-0-278"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-0-279" name="__codelineno-0-279"></a>
-<a id="__codelineno-0-280" name="__codelineno-0-280"></a>        <span class="k">if</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
-<a id="__codelineno-0-281" name="__codelineno-0-281"></a>            <span class="c1"># Extract full docstring</span>
-<a id="__codelineno-0-282" name="__codelineno-0-282"></a>            <span class="n">doc_lines</span> <span class="o">=</span> <span class="p">[</span>
-<a id="__codelineno-0-283" name="__codelineno-0-283"></a>                <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<a id="__codelineno-0-284" name="__codelineno-0-284"></a>                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-285" name="__codelineno-0-285"></a>                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-<a id="__codelineno-0-286" name="__codelineno-0-286"></a>            <span class="p">]</span>
-<a id="__codelineno-0-287" name="__codelineno-0-287"></a>            <span class="k">if</span> <span class="n">doc_lines</span><span class="p">:</span>
-<a id="__codelineno-0-288" name="__codelineno-0-288"></a>                <span class="c1"># First line becomes summary (80 char limit)</span>
-<a id="__codelineno-0-289" name="__codelineno-0-289"></a>                <span class="n">summary</span> <span class="o">=</span> <span class="n">doc_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">80</span><span class="p">]</span>
-<a id="__codelineno-0-290" name="__codelineno-0-290"></a>                <span class="c1"># Full docstring becomes description</span>
-<a id="__codelineno-0-291" name="__codelineno-0-291"></a>                <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">doc_lines</span><span class="p">)</span>
-<a id="__codelineno-0-292" name="__codelineno-0-292"></a>
-<a id="__codelineno-0-293" name="__codelineno-0-293"></a>        <span class="c1"># Use help text if no docstring summary</span>
-<a id="__codelineno-0-294" name="__codelineno-0-294"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">help_text</span> <span class="ow">and</span> <span class="n">summary</span><span class="p">:</span>
-<a id="__codelineno-0-295" name="__codelineno-0-295"></a>            <span class="n">help_text</span> <span class="o">=</span> <span class="n">summary</span>
-<a id="__codelineno-0-296" name="__codelineno-0-296"></a>        <span class="k">elif</span> <span class="ow">not</span> <span class="n">summary</span> <span class="ow">and</span> <span class="n">help_text</span><span class="p">:</span>
-<a id="__codelineno-0-297" name="__codelineno-0-297"></a>            <span class="n">summary</span> <span class="o">=</span> <span class="n">help_text</span><span class="p">[:</span><span class="mi">80</span><span class="p">]</span>
-<a id="__codelineno-0-298" name="__codelineno-0-298"></a>
-<a id="__codelineno-0-299" name="__codelineno-0-299"></a>        <span class="c1"># Default both to help text if still empty</span>
-<a id="__codelineno-0-300" name="__codelineno-0-300"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">summary</span><span class="p">:</span>
-<a id="__codelineno-0-301" name="__codelineno-0-301"></a>            <span class="n">summary</span> <span class="o">=</span> <span class="n">help_text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-0-302" name="__codelineno-0-302"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">description</span><span class="p">:</span>
-<a id="__codelineno-0-303" name="__codelineno-0-303"></a>            <span class="n">description</span> <span class="o">=</span> <span class="n">help_text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
-<a id="__codelineno-0-304" name="__codelineno-0-304"></a>
-<a id="__codelineno-0-305" name="__codelineno-0-305"></a>        <span class="c1"># Determine group name</span>
-<a id="__codelineno-0-306" name="__codelineno-0-306"></a>        <span class="n">group_name</span> <span class="o">=</span> <span class="kc">None</span>
-<a id="__codelineno-0-307" name="__codelineno-0-307"></a>        <span class="k">if</span> <span class="n">prefix</span><span class="p">:</span>
-<a id="__codelineno-0-308" name="__codelineno-0-308"></a>            <span class="c1"># Extract group from prefix (e.g., &quot;daemon &quot; -&gt; &quot;daemon&quot;)</span>
-<a id="__codelineno-0-309" name="__codelineno-0-309"></a>            <span class="n">group_name</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
-<a id="__codelineno-0-310" name="__codelineno-0-310"></a>
-<a id="__codelineno-0-311" name="__codelineno-0-311"></a>        <span class="n">register_command</span><span class="p">(</span>
-<a id="__codelineno-0-312" name="__codelineno-0-312"></a>            <span class="n">name</span><span class="o">=</span><span class="n">full_name</span><span class="p">,</span>
-<a id="__codelineno-0-313" name="__codelineno-0-313"></a>            <span class="n">help</span><span class="o">=</span><span class="n">help_text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-314" name="__codelineno-0-314"></a>            <span class="n">summary</span><span class="o">=</span><span class="n">summary</span><span class="p">,</span>
-<a id="__codelineno-0-315" name="__codelineno-0-315"></a>            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
-<a id="__codelineno-0-316" name="__codelineno-0-316"></a>            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
-<a id="__codelineno-0-317" name="__codelineno-0-317"></a>            <span class="n">group</span><span class="o">=</span><span class="n">group_name</span><span class="p">,</span>
-<a id="__codelineno-0-318" name="__codelineno-0-318"></a>            <span class="n">callback</span><span class="o">=</span><span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="p">,</span>
-<a id="__codelineno-0-319" name="__codelineno-0-319"></a>        <span class="p">)</span>
-<a id="__codelineno-0-320" name="__codelineno-0-320"></a>
-<a id="__codelineno-0-321" name="__codelineno-0-321"></a>    <span class="c1"># Recursively process command groups (subcommands)</span>
-<a id="__codelineno-0-322" name="__codelineno-0-322"></a>    <span class="k">for</span> <span class="n">group_info</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">registered_groups</span><span class="p">:</span>
-<a id="__codelineno-0-323" name="__codelineno-0-323"></a>        <span class="n">group_prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">group_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> &quot;</span>
-<a id="__codelineno-0-324" name="__codelineno-0-324"></a>        <span class="n">introspect_typer_app</span><span class="p">(</span>
-<a id="__codelineno-0-325" name="__codelineno-0-325"></a>            <span class="n">app</span><span class="o">=</span><span class="n">group_info</span><span class="o">.</span><span class="n">typer_instance</span><span class="p">,</span>
-<a id="__codelineno-0-326" name="__codelineno-0-326"></a>            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
-<a id="__codelineno-0-327" name="__codelineno-0-327"></a>            <span class="n">prefix</span><span class="o">=</span><span class="n">group_prefix</span><span class="p">,</span>
-<a id="__codelineno-0-328" name="__codelineno-0-328"></a>        <span class="p">)</span>
-<a id="__codelineno-0-329" name="__codelineno-0-329"></a>
-<a id="__codelineno-0-330" name="__codelineno-0-330"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-<a id="__codelineno-0-331" name="__codelineno-0-331"></a>        <span class="s2">&quot;Introspected Typer app [</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%d</span><span class="s2"> commands registered&quot;</span><span class="p">,</span>
-<a id="__codelineno-0-332" name="__codelineno-0-332"></a>        <span class="n">source</span><span class="p">,</span>
-<a id="__codelineno-0-333" name="__codelineno-0-333"></a>        <span class="nb">len</span><span class="p">(</span><span class="n">COMMAND_REGISTRY</span><span class="p">),</span>
-<a id="__codelineno-0-334" name="__codelineno-0-334"></a>    <span class="p">)</span>
+<a id="__codelineno-0-240" name="__codelineno-0-240"></a><span class="sd">    Args:</span>
+<a id="__codelineno-0-241" name="__codelineno-0-241"></a><span class="sd">        app: Typer application instance to introspect</span>
+<a id="__codelineno-0-242" name="__codelineno-0-242"></a><span class="sd">        source: Source tag for commands (&quot;core&quot; or spoke name)</span>
+<a id="__codelineno-0-243" name="__codelineno-0-243"></a><span class="sd">        prefix: Command prefix for nested groups (used internally for recursion)</span>
+<a id="__codelineno-0-244" name="__codelineno-0-244"></a>
+<a id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="sd">    Example:</span>
+<a id="__codelineno-0-246" name="__codelineno-0-246"></a><span class="sd">        ```python</span>
+<a id="__codelineno-0-247" name="__codelineno-0-247"></a><span class="sd">        &gt;&gt;&gt; from typer import Typer</span>
+<a id="__codelineno-0-248" name="__codelineno-0-248"></a><span class="sd">        &gt;&gt;&gt; app = Typer()</span>
+<a id="__codelineno-0-249" name="__codelineno-0-249"></a><span class="sd">        &gt;&gt;&gt; @app.command()</span>
+<a id="__codelineno-0-250" name="__codelineno-0-250"></a><span class="sd">        ... def test():</span>
+<a id="__codelineno-0-251" name="__codelineno-0-251"></a><span class="sd">        ...     &#39;&#39;&#39;Test command&#39;&#39;&#39;</span>
+<a id="__codelineno-0-252" name="__codelineno-0-252"></a><span class="sd">        ...     pass</span>
+<a id="__codelineno-0-253" name="__codelineno-0-253"></a><span class="sd">        &gt;&gt;&gt; introspect_typer_app(app, source=&quot;core&quot;)</span>
+<a id="__codelineno-0-254" name="__codelineno-0-254"></a><span class="sd">        &gt;&gt;&gt; commands = get_all_commands()</span>
+<a id="__codelineno-0-255" name="__codelineno-0-255"></a><span class="sd">        &gt;&gt;&gt; print(commands[0][&#39;name&#39;])</span>
+<a id="__codelineno-0-256" name="__codelineno-0-256"></a><span class="sd">        test</span>
+<a id="__codelineno-0-257" name="__codelineno-0-257"></a><span class="sd">        ```</span>
+<a id="__codelineno-0-258" name="__codelineno-0-258"></a>
+<a id="__codelineno-0-259" name="__codelineno-0-259"></a><span class="sd">    Note:</span>
+<a id="__codelineno-0-260" name="__codelineno-0-260"></a><span class="sd">        - Handles both root commands and nested subgroups</span>
+<a id="__codelineno-0-261" name="__codelineno-0-261"></a><span class="sd">        - Extracts help text from command docstrings if not explicitly set</span>
+<a id="__codelineno-0-262" name="__codelineno-0-262"></a><span class="sd">        - Called after load_spokes() to capture all registered commands</span>
+<a id="__codelineno-0-263" name="__codelineno-0-263"></a><span class="sd">        - Safe to call multiple times (will overwrite existing entries)</span>
+<a id="__codelineno-0-264" name="__codelineno-0-264"></a><span class="sd">    &quot;&quot;&quot;</span>
+<a id="__codelineno-0-265" name="__codelineno-0-265"></a>    <span class="c1"># Register direct commands at this level</span>
+<a id="__codelineno-0-266" name="__codelineno-0-266"></a>    <span class="k">for</span> <span class="n">cmd_info</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">registered_commands</span><span class="p">:</span>
+<a id="__codelineno-0-267" name="__codelineno-0-267"></a>        <span class="c1"># Use explicit name or fall back to function name</span>
+<a id="__codelineno-0-268" name="__codelineno-0-268"></a>        <span class="n">cmd_name</span> <span class="o">=</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="vm">__name__</span>
+<a id="__codelineno-0-269" name="__codelineno-0-269"></a>        <span class="n">full_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">cmd_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-0-270" name="__codelineno-0-270"></a>
+<a id="__codelineno-0-271" name="__codelineno-0-271"></a>        <span class="c1"># Extract help text and full docstring</span>
+<a id="__codelineno-0-272" name="__codelineno-0-272"></a>        <span class="n">help_text</span> <span class="o">=</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">help</span>
+<a id="__codelineno-0-273" name="__codelineno-0-273"></a>        <span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-274" name="__codelineno-0-274"></a>        <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-275" name="__codelineno-0-275"></a>
+<a id="__codelineno-0-276" name="__codelineno-0-276"></a>        <span class="k">if</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">:</span>
+<a id="__codelineno-0-277" name="__codelineno-0-277"></a>            <span class="c1"># Extract full docstring</span>
+<a id="__codelineno-0-278" name="__codelineno-0-278"></a>            <span class="n">doc_lines</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-279" name="__codelineno-0-279"></a>                <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-0-280" name="__codelineno-0-280"></a>                <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="o">.</span><span class="vm">__doc__</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-281" name="__codelineno-0-281"></a>                <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+<a id="__codelineno-0-282" name="__codelineno-0-282"></a>            <span class="p">]</span>
+<a id="__codelineno-0-283" name="__codelineno-0-283"></a>            <span class="k">if</span> <span class="n">doc_lines</span><span class="p">:</span>
+<a id="__codelineno-0-284" name="__codelineno-0-284"></a>                <span class="c1"># First line becomes summary (80 char limit)</span>
+<a id="__codelineno-0-285" name="__codelineno-0-285"></a>                <span class="n">summary</span> <span class="o">=</span> <span class="n">doc_lines</span><span class="p">[</span><span class="mi">0</span><span class="p">][:</span><span class="mi">80</span><span class="p">]</span>
+<a id="__codelineno-0-286" name="__codelineno-0-286"></a>                <span class="c1"># Full docstring becomes description</span>
+<a id="__codelineno-0-287" name="__codelineno-0-287"></a>                <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">doc_lines</span><span class="p">)</span>
+<a id="__codelineno-0-288" name="__codelineno-0-288"></a>
+<a id="__codelineno-0-289" name="__codelineno-0-289"></a>        <span class="c1"># Use help text if no docstring summary</span>
+<a id="__codelineno-0-290" name="__codelineno-0-290"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">help_text</span> <span class="ow">and</span> <span class="n">summary</span><span class="p">:</span>
+<a id="__codelineno-0-291" name="__codelineno-0-291"></a>            <span class="n">help_text</span> <span class="o">=</span> <span class="n">summary</span>
+<a id="__codelineno-0-292" name="__codelineno-0-292"></a>        <span class="k">elif</span> <span class="ow">not</span> <span class="n">summary</span> <span class="ow">and</span> <span class="n">help_text</span><span class="p">:</span>
+<a id="__codelineno-0-293" name="__codelineno-0-293"></a>            <span class="n">summary</span> <span class="o">=</span> <span class="n">help_text</span><span class="p">[:</span><span class="mi">80</span><span class="p">]</span>
+<a id="__codelineno-0-294" name="__codelineno-0-294"></a>
+<a id="__codelineno-0-295" name="__codelineno-0-295"></a>        <span class="c1"># Default both to help text if still empty</span>
+<a id="__codelineno-0-296" name="__codelineno-0-296"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">summary</span><span class="p">:</span>
+<a id="__codelineno-0-297" name="__codelineno-0-297"></a>            <span class="n">summary</span> <span class="o">=</span> <span class="n">help_text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-298" name="__codelineno-0-298"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">description</span><span class="p">:</span>
+<a id="__codelineno-0-299" name="__codelineno-0-299"></a>            <span class="n">description</span> <span class="o">=</span> <span class="n">help_text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-300" name="__codelineno-0-300"></a>
+<a id="__codelineno-0-301" name="__codelineno-0-301"></a>        <span class="c1"># Determine group name</span>
+<a id="__codelineno-0-302" name="__codelineno-0-302"></a>        <span class="n">group_name</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-0-303" name="__codelineno-0-303"></a>        <span class="k">if</span> <span class="n">prefix</span><span class="p">:</span>
+<a id="__codelineno-0-304" name="__codelineno-0-304"></a>            <span class="c1"># Extract group from prefix (e.g., &quot;daemon &quot; -&gt; &quot;daemon&quot;)</span>
+<a id="__codelineno-0-305" name="__codelineno-0-305"></a>            <span class="n">group_name</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="n">prefix</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">else</span> <span class="kc">None</span>
+<a id="__codelineno-0-306" name="__codelineno-0-306"></a>
+<a id="__codelineno-0-307" name="__codelineno-0-307"></a>        <span class="n">register_command</span><span class="p">(</span>
+<a id="__codelineno-0-308" name="__codelineno-0-308"></a>            <span class="n">name</span><span class="o">=</span><span class="n">full_name</span><span class="p">,</span>
+<a id="__codelineno-0-309" name="__codelineno-0-309"></a>            <span class="n">help</span><span class="o">=</span><span class="n">help_text</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-310" name="__codelineno-0-310"></a>            <span class="n">summary</span><span class="o">=</span><span class="n">summary</span><span class="p">,</span>
+<a id="__codelineno-0-311" name="__codelineno-0-311"></a>            <span class="n">description</span><span class="o">=</span><span class="n">description</span><span class="p">,</span>
+<a id="__codelineno-0-312" name="__codelineno-0-312"></a>            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+<a id="__codelineno-0-313" name="__codelineno-0-313"></a>            <span class="n">group</span><span class="o">=</span><span class="n">group_name</span><span class="p">,</span>
+<a id="__codelineno-0-314" name="__codelineno-0-314"></a>            <span class="n">callback</span><span class="o">=</span><span class="n">cmd_info</span><span class="o">.</span><span class="n">callback</span><span class="p">,</span>
+<a id="__codelineno-0-315" name="__codelineno-0-315"></a>        <span class="p">)</span>
+<a id="__codelineno-0-316" name="__codelineno-0-316"></a>
+<a id="__codelineno-0-317" name="__codelineno-0-317"></a>    <span class="c1"># Recursively process command groups (subcommands)</span>
+<a id="__codelineno-0-318" name="__codelineno-0-318"></a>    <span class="k">for</span> <span class="n">group_info</span> <span class="ow">in</span> <span class="n">app</span><span class="o">.</span><span class="n">registered_groups</span><span class="p">:</span>
+<a id="__codelineno-0-319" name="__codelineno-0-319"></a>        <span class="n">group_prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}{</span><span class="n">group_info</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> &quot;</span>
+<a id="__codelineno-0-320" name="__codelineno-0-320"></a>        <span class="n">introspect_typer_app</span><span class="p">(</span>
+<a id="__codelineno-0-321" name="__codelineno-0-321"></a>            <span class="n">app</span><span class="o">=</span><span class="n">group_info</span><span class="o">.</span><span class="n">typer_instance</span><span class="p">,</span>
+<a id="__codelineno-0-322" name="__codelineno-0-322"></a>            <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+<a id="__codelineno-0-323" name="__codelineno-0-323"></a>            <span class="n">prefix</span><span class="o">=</span><span class="n">group_prefix</span><span class="p">,</span>
+<a id="__codelineno-0-324" name="__codelineno-0-324"></a>        <span class="p">)</span>
+<a id="__codelineno-0-325" name="__codelineno-0-325"></a>
+<a id="__codelineno-0-326" name="__codelineno-0-326"></a>    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+<a id="__codelineno-0-327" name="__codelineno-0-327"></a>        <span class="s2">&quot;Introspected Typer app [</span><span class="si">%s</span><span class="s2">]: </span><span class="si">%d</span><span class="s2"> commands registered&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-328" name="__codelineno-0-328"></a>        <span class="n">source</span><span class="p">,</span>
+<a id="__codelineno-0-329" name="__codelineno-0-329"></a>        <span class="nb">len</span><span class="p">(</span><span class="n">COMMAND_REGISTRY</span><span class="p">),</span>
+<a id="__codelineno-0-330" name="__codelineno-0-330"></a>    <span class="p">)</span>
 </code></pre></div></td></tr></table></div>
             </details>
     </div>

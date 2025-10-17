@@ -1130,6 +1130,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#official-gears" class="md-nav__link">
+    <span class="md-ellipsis">
+      Official Gears
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Official Gears">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axium-gear-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-gear-ansible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axium-gear-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-gear-web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       See Also
@@ -1904,6 +1937,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#official-gears" class="md-nav__link">
+    <span class="md-ellipsis">
+      Official Gears
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Official Gears">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axium-gear-ansible" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-gear-ansible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axium-gear-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-gear-web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#see-also" class="md-nav__link">
     <span class="md-ellipsis">
       See Also
@@ -2513,6 +2579,37 @@
 <a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="c1"># Check for conflicts</span>
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>axium<span class="w"> </span>daemon<span class="w"> </span>logs<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Prefix conflict&quot;</span>
 </code></pre></div>
+<hr />
+<h2 id="official-gears">Official Gears<a class="headerlink" href="#official-gears" title="Permanent link">&para;</a></h2>
+<p>The Axium project maintains several official gears that demonstrate best practices and provide common functionality:</p>
+<h3 id="axium-gear-ansible">axium-gear-ansible<a class="headerlink" href="#axium-gear-ansible" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/axium-tools/axium-gear-ansible"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-axium--gear--ansible-blue" /></a></p>
+<p>Profile-based ansible-playbook execution with environment awareness. Simplifies Ansible operations with preconfigured profiles and environment-specific inventory management.</p>
+<p><strong>Features:</strong>
+- Profile-based playbook execution
+- Environment-aware inventory selection
+- Automatic verbosity control
+- Tag filtering support
+- Dry-run mode
+- Custom variables per profile</p>
+<p><strong>Permissions:</strong>
+- <code>exec</code>: Run ansible-playbook commands
+- <code>fs_read</code>: Access inventory and playbook files
+- <code>notify</code>: Send completion notifications</p>
+<h3 id="axium-gear-web">axium-gear-web<a class="headerlink" href="#axium-gear-web" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/axium-tools/axium-gear-web"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-axium--gear--web-blue" /></a></p>
+<p>Web dashboard for Axium state, permissions, and notifications. Provides a modern web interface for monitoring and managing Axium.</p>
+<p><strong>Features:</strong>
+- Real-time state visualization
+- Permission management UI
+- Notification history viewer
+- Environment switching
+- Gear and spoke status monitoring
+- RESTful API for external integrations</p>
+<p><strong>Permissions:</strong>
+- <code>exec</code>: Start embedded web server
+- <code>fs_read</code>: Read Axium configuration
+- <code>ipc</code>: Access daemon state and notifications</p>
 <hr />
 <h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permanent link">&para;</a></h2>
 <ul>

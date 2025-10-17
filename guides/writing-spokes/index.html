@@ -894,6 +894,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#official-spokes" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Official Spokes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Official Spokes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axium-spoke-creds" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-spoke-creds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axium-spoke-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-spoke-aws
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#design-summary" class="md-nav__link">
     <span class="md-ellipsis">
       🧠 Design Summary
@@ -1478,6 +1511,39 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#official-spokes" class="md-nav__link">
+    <span class="md-ellipsis">
+      📦 Official Spokes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📦 Official Spokes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#axium-spoke-creds" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-spoke-creds
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#axium-spoke-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      axium-spoke-aws
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#design-summary" class="md-nav__link">
     <span class="md-ellipsis">
       🧠 Design Summary
@@ -1783,6 +1849,26 @@ env.all() → returns full envs.yaml mapping
 <li>Document any external dependencies (e.g., boto3).</li>
 <li>Avoid blocking calls — use async when possible.</li>
 </ol>
+<hr />
+<h2 id="official-spokes">📦 Official Spokes<a class="headerlink" href="#official-spokes" title="Permanent link">&para;</a></h2>
+<p>The Axium project maintains several official spokes that demonstrate best practices and provide common functionality:</p>
+<h3 id="axium-spoke-creds">axium-spoke-creds<a class="headerlink" href="#axium-spoke-creds" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/axium-tools/axium-spoke-creds"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-axium--spoke--creds-blue" /></a></p>
+<p>Credential validity checking with HUD integration. Provides commands to check credential status and displays validity in the HUD status line.</p>
+<p><strong>Features:</strong>
+- Check credential validity for current environment
+- Display credential status in HUD (green Y / red N)
+- Automatic credential refresh hooks
+- Environment-aware credential management</p>
+<h3 id="axium-spoke-aws">axium-spoke-aws<a class="headerlink" href="#axium-spoke-aws" title="Permanent link">&para;</a></h3>
+<p><a href="https://github.com/axium-tools/axium-spoke-aws"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-axium--spoke--aws-blue" /></a></p>
+<p>AWS CLI wrapper with intelligent resource discovery. Simplifies common AWS operations with environment-aware commands.</p>
+<p><strong>Features:</strong>
+- EC2 instance listing and management
+- Resource search across services
+- Cost analysis commands
+- Recent resource activity tracking
+- Environment-specific AWS profile handling</p>
 <hr />
 <h2 id="design-summary">🧠 Design Summary<a class="headerlink" href="#design-summary" title="Permanent link">&para;</a></h2>
 <ul>
